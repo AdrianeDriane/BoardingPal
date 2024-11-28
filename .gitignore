@@ -1,0 +1,47 @@
+# Maven build output
+target/
+
+# NetBeans specific files
+.nb-gradle/
+nbproject/
+
+# IDE-specific files
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# Compiled class files
+*.class
+
+# JAR/WAR/EAR files (packaged outputs)
+*.jar
+*.war
+*.ear
+
+# Log files
+*.log
+
+# OS-specific files
+.DS_Store        # macOS
+Thumbs.db        # Windows
+
+# JavaFX-related files (if using JavaFX Scene Builder)
+# Scene Builder caches and other temp files
+*.fxml
+*.css
+*.javafx
+
+# NetBeans-specific user preferences and cache files
+*.user
+*.bak
+*.swp
+
+# Maven wrapper files (if used)
+.mvn/
+.mvnw
+.mvnw.cmd
+
+# Temporary files created by IDE or editor
+nbproject/private/
