@@ -7,6 +7,7 @@ package com.g4bsit2a.boardingpal;
 /**
  *
  * @author Adriane Dilao
+ * @author John Olasiman
  */
 public class BoardingPal {
 
