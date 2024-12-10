@@ -1,6 +1,8 @@
 
 package boardingpal;
 
+import static boardingpal.LaunchApp.users;
+import boardingpal.models.User;
 import java.awt.Color;
 import java.awt.geom.RoundRectangle2D;
 
@@ -30,7 +32,6 @@ public class SignUp extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        fButton1 = new boardingPal.FButton();
         tfmail = new boardingpal.RoundTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -38,33 +39,16 @@ public class SignUp extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         Login = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel6 = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
-        fButton2 = new boardingPal.FButton();
-        fButton3 = new boardingPal.FButton();
+        signUpButton = new boardingPal.FButton();
         jLabel7 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        roundedPasswordField2 = new boardingpal.RoundedPasswordField();
-        roundedPasswordField1 = new boardingpal.RoundedPasswordField();
+        tfConfirmPassword = new boardingpal.RoundTextField();
+        tfPassword = new boardingpal.RoundTextField();
+        jLabel10 = new javax.swing.JLabel();
+        tfFullName = new boardingpal.RoundTextField();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-
-        fButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/Facebook.png"))); // NOI18N
-        fButton1.setText("Continue with Facebook");
-        fButton1.setFillClick(new java.awt.Color(0, 102, 255));
-        fButton1.setFillOriginal(new java.awt.Color(0, 102, 255));
-        fButton1.setFillOver(new java.awt.Color(0, 102, 255));
-        fButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        fButton1.setIconTextGap(20);
-        fButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fButton1ActionPerformed(evt);
-            }
-        });
 
         tfmail.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 20, 15, 20));
         tfmail.setForeground(new java.awt.Color(153, 153, 153));
@@ -90,7 +74,6 @@ public class SignUp extends javax.swing.JFrame {
         jLabel1.setText("Email or phone number");
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel2.setText("Password");
 
         Close.setFont(new java.awt.Font("Segoe UI Semibold", 0, 36)); // NOI18N
         Close.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/close.png"))); // NOI18N
@@ -115,32 +98,13 @@ public class SignUp extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
-        jLabel6.setText("or");
-
-        fButton2.setText("Sign Up");
-        fButton2.setFillClick(new java.awt.Color(0, 0, 0));
-        fButton2.setFillOver(new java.awt.Color(0, 0, 0));
-        fButton2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        fButton2.addActionListener(new java.awt.event.ActionListener() {
+        signUpButton.setText("Sign Up");
+        signUpButton.setFillClick(new java.awt.Color(0, 0, 0));
+        signUpButton.setFillOver(new java.awt.Color(0, 0, 0));
+        signUpButton.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        signUpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fButton2ActionPerformed(evt);
-            }
-        });
-
-        fButton3.setForeground(new java.awt.Color(0, 0, 0));
-        fButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/Google.png"))); // NOI18N
-        fButton3.setText("Continue with Google");
-        fButton3.setFillClick(new java.awt.Color(255, 255, 255));
-        fButton3.setFillOriginal(new java.awt.Color(255, 255, 255));
-        fButton3.setFillOver(new java.awt.Color(255, 255, 255));
-        fButton3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        fButton3.setIconTextGap(25);
-        fButton3.setInheritsPopupMenu(true);
-        fButton3.setLineOriginal(new java.awt.Color(153, 153, 153));
-        fButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fButton3ActionPerformed(evt);
+                signUpButtonActionPerformed(evt);
             }
         });
 
@@ -148,79 +112,107 @@ public class SignUp extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(204, 0, 51));
         jLabel7.setText("Pal");
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(null);
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/weui_eyes-off-outlined.png"))); // NOI18N
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(390, 20, 40, 30);
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/weui_eyes-off-outlined.png"))); // NOI18N
-        jPanel1.add(jLabel8);
-        jLabel8.setBounds(390, 90, 40, 30);
-
-        roundedPasswordField2.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 20, 15, 20));
-        roundedPasswordField2.setLineColor(new java.awt.Color(153, 153, 153));
-        roundedPasswordField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                roundedPasswordField2ActionPerformed(evt);
+        tfConfirmPassword.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 20, 15, 20));
+        tfConfirmPassword.setForeground(new java.awt.Color(153, 153, 153));
+        tfConfirmPassword.setText("Confirm your password");
+        tfConfirmPassword.setFillColor(new java.awt.Color(255, 255, 255));
+        tfConfirmPassword.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        tfConfirmPassword.setLineColor(new java.awt.Color(153, 153, 153));
+        tfConfirmPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tfConfirmPasswordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tfConfirmPasswordFocusLost(evt);
             }
         });
-        jPanel1.add(roundedPasswordField2);
-        roundedPasswordField2.setBounds(40, 10, 410, 55);
-
-        roundedPasswordField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 20, 15, 20));
-        roundedPasswordField1.setLineColor(new java.awt.Color(153, 153, 153));
-        roundedPasswordField1.setPlaceholder("  Confirm your password");
-        roundedPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        tfConfirmPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                roundedPasswordField1ActionPerformed(evt);
+                tfConfirmPasswordActionPerformed(evt);
             }
         });
-        jPanel1.add(roundedPasswordField1);
-        roundedPasswordField1.setBounds(40, 80, 410, 55);
+
+        tfPassword.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 20, 15, 20));
+        tfPassword.setForeground(new java.awt.Color(153, 153, 153));
+        tfPassword.setText("Enter your password");
+        tfPassword.setFillColor(new java.awt.Color(255, 255, 255));
+        tfPassword.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        tfPassword.setLineColor(new java.awt.Color(153, 153, 153));
+        tfPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tfPasswordFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tfPasswordFocusLost(evt);
+            }
+        });
+        tfPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfPasswordActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel10.setText("Password");
+
+        tfFullName.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 20, 15, 20));
+        tfFullName.setForeground(new java.awt.Color(153, 153, 153));
+        tfFullName.setText("Enter your full name");
+        tfFullName.setFillColor(new java.awt.Color(255, 255, 255));
+        tfFullName.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        tfFullName.setLineColor(new java.awt.Color(153, 153, 153));
+        tfFullName.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tfFullNameFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tfFullNameFocusLost(evt);
+            }
+        });
+        tfFullName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfFullNameActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel11.setText("Enter Full Name");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(jLabel5)
-                .addGap(0, 0, 0)
-                .addComponent(jLabel7)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(tfmail, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(fButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(115, 115, 115)
-                            .addComponent(jLabel3)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(Login))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGap(36, 36, 36)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(fButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(fButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(Close)
+                        .addGap(75, 75, 75)
+                        .addComponent(jLabel5)
+                        .addGap(0, 0, 0)
+                        .addComponent(jLabel7))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 44, Short.MAX_VALUE))
+                        .addGap(34, 34, 34)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(tfmail, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(416, 416, 416)
+                                        .addComponent(jLabel2))
+                                    .addComponent(tfConfirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel10)
+                                    .addComponent(signUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(77, 77, 77)
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Login))
+                                    .addComponent(tfFullName, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel11)))
+                            .addComponent(Close))))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,28 +229,23 @@ public class SignUp extends javax.swing.JFrame {
                 .addComponent(tfmail, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(fButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfConfirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tfFullName, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
+                .addComponent(signUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(Login))
-                .addGap(7, 7, 7)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(7, 7, 7)
-                        .addComponent(fButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(fButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel6))
-                .addGap(11, 11, 11))
+                .addGap(73, 73, 73))
         );
 
         pack();
@@ -282,28 +269,27 @@ public class SignUp extends javax.swing.JFrame {
         
     }//GEN-LAST:event_tfmailActionPerformed
 
-    private void fButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fButton1ActionPerformed
-    
+    private void signUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpButtonActionPerformed
+        String email = tfmail.getText();
+        String password = tfPassword.getText();
+        String fullName = tfFullName.getText();
         
+        users.add(new User(email, password, fullName));
         
-    
-    }//GEN-LAST:event_fButton1ActionPerformed
+        if(overlay == null){
+            LaunchApp launchAppFrame = new LaunchApp("Signup");
+            launchAppFrame.setVisible(true);
+            launchAppFrame.pack();
+            launchAppFrame.setLocationRelativeTo(null);
+            overlay.dispose();
+        } 
+        Login loginFrame = new Login(overlay);
+        loginFrame.setVisible(true);
+        loginFrame.pack();
+        loginFrame.setLocationRelativeTo(null);
 
-    private void roundedPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roundedPasswordField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_roundedPasswordField1ActionPerformed
-
-    private void roundedPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roundedPasswordField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_roundedPasswordField2ActionPerformed
-
-    private void fButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fButton2ActionPerformed
-
-    private void fButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_fButton3ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_signUpButtonActionPerformed
 
     private void LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginMouseClicked
         
@@ -329,6 +315,60 @@ public class SignUp extends javax.swing.JFrame {
         this.dispose();
         overlay.dispose();
     }//GEN-LAST:event_CloseMouseClicked
+
+    private void tfConfirmPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfConfirmPasswordFocusGained
+        if(tfConfirmPassword.getText().equals("Confirm your password")){
+            tfConfirmPassword.setText("");
+            tfConfirmPassword.setForeground(new Color(153,153,153));
+        }
+    }//GEN-LAST:event_tfConfirmPasswordFocusGained
+
+    private void tfConfirmPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfConfirmPasswordFocusLost
+        if(tfConfirmPassword.getText().equals("")){
+            tfConfirmPassword.setText("Confirm your password");
+            tfConfirmPassword.setForeground(new Color(153,153,153));
+        }
+    }//GEN-LAST:event_tfConfirmPasswordFocusLost
+
+    private void tfConfirmPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfConfirmPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfConfirmPasswordActionPerformed
+
+    private void tfPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfPasswordFocusGained
+        if(tfPassword.getText().equals("Enter your password")){
+            tfPassword.setText("");
+            tfPassword.setForeground(new Color(153,153,153));
+        }
+    }//GEN-LAST:event_tfPasswordFocusGained
+
+    private void tfPasswordFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfPasswordFocusLost
+        if(tfPassword.getText().equals("")){
+            tfPassword.setText("Enter your password");
+            tfPassword.setForeground(new Color(153,153,153));
+        }
+    }//GEN-LAST:event_tfPasswordFocusLost
+
+    private void tfPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfPasswordActionPerformed
+
+    private void tfFullNameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfFullNameFocusGained
+        if(tfFullName.getText().equals("Enter your full name")){
+            tfFullName.setText("");
+            tfFullName.setForeground(new Color(153,153,153));
+        }
+    }//GEN-LAST:event_tfFullNameFocusGained
+
+    private void tfFullNameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfFullNameFocusLost
+        if(tfFullName.getText().equals("")){
+            tfFullName.setText("Enter your full name");
+            tfFullName.setForeground(new Color(153,153,153));
+        }
+    }//GEN-LAST:event_tfFullNameFocusLost
+
+    private void tfFullNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfFullNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfFullNameActionPerformed
 
  
     public static void main(String args[]) {
@@ -366,22 +406,17 @@ public class SignUp extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Close;
     private javax.swing.JLabel Login;
-    private boardingPal.FButton fButton1;
-    private boardingPal.FButton fButton2;
-    private boardingPal.FButton fButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
-    private boardingpal.RoundedPasswordField roundedPasswordField1;
-    private boardingpal.RoundedPasswordField roundedPasswordField2;
+    private boardingPal.FButton signUpButton;
+    private boardingpal.RoundTextField tfConfirmPassword;
+    private boardingpal.RoundTextField tfFullName;
+    private boardingpal.RoundTextField tfPassword;
     private boardingpal.RoundTextField tfmail;
     // End of variables declaration//GEN-END:variables
 }
