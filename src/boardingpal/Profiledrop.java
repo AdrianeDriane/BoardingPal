@@ -12,13 +12,12 @@ import java.awt.geom.RoundRectangle2D;
  * @author Gil
  */
 public class Profiledrop extends javax.swing.JFrame {
-      
     
-    public Profiledrop() {
+    public Profiledrop() { 
         initComponents();
         getContentPane().setBackground(Color.white);
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 40, 40));
-        setLocation(1000,50);
+        setLocation(1200,150);
        
     }
 
@@ -31,7 +30,7 @@ public class Profiledrop extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        viewProfile = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -41,36 +40,85 @@ public class Profiledrop extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 16)); // NOI18N
-        jLabel1.setText("Profile");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 26, -1, -1));
+        viewProfile.setFont(new java.awt.Font("Segoe UI Semibold", 0, 16)); // NOI18N
+        viewProfile.setText("Profile");
+        viewProfile.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                viewProfileMouseClicked(evt);
+            }
+        });
+        viewProfile.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                viewProfileKeyPressed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 16)); // NOI18N
         jLabel2.setText("Bed Space");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 74, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 16)); // NOI18N
         jLabel3.setText("About Us");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 177, -1, -1));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 161, 245, 10));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Semibold", 0, 16)); // NOI18N
         jLabel4.setText("Settings");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 127, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Semibold", 0, 16)); // NOI18N
         jLabel5.setText("Help Center");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 217, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 16)); // NOI18N
         jLabel6.setText("Log Out");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 265, -1, -1));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(viewProfile)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(viewProfile)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel6)
+                .addGap(25, 25, 25))
+        );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void viewProfileKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_viewProfileKeyPressed
+
+    }//GEN-LAST:event_viewProfileKeyPressed
+
+    private void viewProfileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewProfileMouseClicked
+        ProfileFrame profileFrame = new ProfileFrame(true);
+        profileFrame.setVisible(true);
+        profileFrame.setLocationRelativeTo(null);
+        profileFrame.pack();
+        this.dispose();
+    }//GEN-LAST:event_viewProfileMouseClicked
 
     /**
      * @param args the command line arguments
@@ -108,12 +156,12 @@ public class Profiledrop extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel viewProfile;
     // End of variables declaration//GEN-END:variables
 }

@@ -15,12 +15,13 @@ public class User {
     private String occupation;
     private String nationality;
     private String religion;
+    private String about;
 //    private BedSpace bedspace; // Can be null
 //    private List<Request> pendingRequests; // Tracks incoming and outgoing requests
 
     // Constructor
     public User(String email, String password, String fullName, int age, LocalDate birthdate,
-                String gender, String occupation, String nationality, String religion) {
+                String gender, String occupation, String nationality, String religion, String about) {
         this.email = email;
         this.password = password;
         this.fullName = fullName;
@@ -31,6 +32,7 @@ public class User {
         this.occupation = occupation;
         this.nationality = nationality;
         this.religion = religion;
+        this.about = about;
 //        this.bedspace = null; // Default is no bedspace
 //        this.pendingRequests = new ArrayList<>(); // Initialize the list
     }
@@ -44,6 +46,14 @@ public class User {
     }
 
     // Getters and Setters
+    public String getAbout(){
+        return about;
+    }    
+    
+    public void setAbout(String about){
+        this.about = about;
+    }
+    
     public String getEmail() {
         return email;
     }

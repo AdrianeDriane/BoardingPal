@@ -22,7 +22,8 @@ public class LaunchApp extends javax.swing.JFrame {
             "Male",
             "Software Engineer",
             "Filipino",
-            "Christianity"
+            "Christianity",
+            "I love fried Chicken and lasagnas."
         ));
         
         initComponents();
@@ -42,7 +43,8 @@ public class LaunchApp extends javax.swing.JFrame {
             "Male",
             "Software Engineer",
             "Filipino",
-            "Christianity"
+            "Christianity",
+            "I love fried Chicken and lasagnas."
         ));
         initComponents();
     }

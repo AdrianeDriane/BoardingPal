@@ -4,17 +4,26 @@
  */
 package boardingpal;
 
+import java.awt.geom.RoundRectangle2D;
+import static boardingpal.LaunchApp.loggedInUser;
 /**
  *
  * @author Gil
  */
-public class Stephframe extends javax.swing.JFrame {
-
+public class ProfileFrame extends javax.swing.JFrame {
+    boolean isOwnedByUser = false;
     /**
-     * Creates new form Stephframe
+     * Creates new form
      */
-    public Stephframe() {
+    public ProfileFrame() {
         initComponents();
+        setLocationRelativeTo(null);
+    }
+    
+    public ProfileFrame(boolean isOwnedByUser) {
+        this.isOwnedByUser = isOwnedByUser;
+        initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -45,10 +54,6 @@ public class Stephframe extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -66,8 +71,9 @@ public class Stephframe extends javax.swing.JFrame {
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
-        jLabel47 = new javax.swing.JLabel();
         fButton1 = new boardingPal.FButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -192,34 +198,22 @@ public class Stephframe extends javax.swing.JFrame {
         fButton2.setFillOver(new java.awt.Color(255, 255, 255));
         fButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         fButton2.setLineOriginal(new java.awt.Color(204, 204, 204));
+        fButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                fButton2MouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel1.setText("Stephanie Echavez");
+        jLabel1.setText(isOwnedByUser ? loggedInUser.getFullName() : "");
 
         jLabel2.setBackground(new java.awt.Color(153, 153, 153));
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel2.setText("19 - Female");
+        jLabel2.setText(String.valueOf(loggedInUser.getAge()) + " - " + loggedInUser.getGender());
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         jLabel3.setText("About");
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel4.setText("Lorem   ipsum   dolor   sit   amet");
-        jLabel4.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel5.setText("consectetur.  Augue nec eusimod");
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel6.setText("platea nulla. Dis id ed arcu feugiat");
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel7.setText("consectetur   sit   nassa     augue ");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         jLabel8.setText("Roommate Details");
@@ -266,48 +260,63 @@ public class Stephframe extends javax.swing.JFrame {
 
         jLabel39.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel39.setText("Stephanie Echavez");
+        jLabel39.setText(isOwnedByUser ? loggedInUser.getFullName() : "");
 
         jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel40.setText("19");
+        jLabel40.setText(isOwnedByUser ? String.valueOf(loggedInUser.getAge()) : "");
 
         jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel41.setText("03/04/05");
+        jLabel41.setText(isOwnedByUser ? loggedInUser.getBirthdate().toString() : "");
 
         jLabel42.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel42.setText("N/A");
+        jLabel42.setText(isOwnedByUser ? loggedInUser.getResidenceStatus() : "");
 
         jLabel43.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel43.setText("Female");
+        jLabel43.setText(isOwnedByUser ? loggedInUser.getGender() : "");
 
         jLabel44.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel44.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel44.setText("Student");
+        jLabel44.setText(isOwnedByUser ? loggedInUser.getOccupation() : "");
 
         jLabel45.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel45.setText("Filipino");
+        jLabel45.setText(isOwnedByUser ? loggedInUser.getNationality() : "");
 
         jLabel46.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel46.setText("Roman Catholic");
-
-        jLabel47.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        jLabel47.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel47.setText("Sagitis  eu  nunc  eget  venenatis");
+        jLabel46.setText(isOwnedByUser ? loggedInUser.getReligion() : "");
 
         fButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/ArrowRight.png"))); // NOI18N
-        fButton1.setText("Get in touch");
+        fButton1.setText(isOwnedByUser ? "Edit Profile" : "Get in touch");
+        fButton1.setActionCommand(isOwnedByUser ? "Edit Profile" : "Get in touch");
         fButton1.setFillClick(new java.awt.Color(0, 0, 0));
         fButton1.setFillOver(new java.awt.Color(0, 0, 0));
         fButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         fButton1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         fButton1.setIconTextGap(10);
         fButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        fButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                fButton1MouseClicked(evt);
+            }
+        });
+        fButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fButton1ActionPerformed(evt);
+            }
+        });
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText(loggedInUser.getAbout());
+        jTextArea1.setBorder(null);
+        jTextArea1.setFocusable(false);
+        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -322,18 +331,11 @@ public class Stephframe extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(545, Short.MAX_VALUE)
+                .addContainerGap(626, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel3)
-                            .addGap(191, 191, 191))
-                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel47))
-                .addGap(155, 155, 155)
+                    .addComponent(jLabel3)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(130, 130, 130)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -413,17 +415,9 @@ public class Stephframe extends javax.swing.JFrame {
                             .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(jLabel5)
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel47)))
-                .addGap(0, 165, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 172, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -463,6 +457,30 @@ public class Stephframe extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void fButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fButton1ActionPerformed
+
+    private void fButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fButton1MouseClicked
+        if(isOwnedByUser) {
+            EditProfileFrame editProfileFrame = new EditProfileFrame(isOwnedByUser);
+            editProfileFrame.setVisible(true);
+            editProfileFrame.setLocationRelativeTo(null);
+            editProfileFrame.pack();
+            this.dispose();
+        } else {
+            
+        }
+    }//GEN-LAST:event_fButton1MouseClicked
+
+    private void fButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fButton2MouseClicked
+        LoggedIn loggedInFrame = new LoggedIn();
+        loggedInFrame.setVisible(true);
+        loggedInFrame.setLocationRelativeTo(null);
+        loggedInFrame.pack();
+        this.dispose();
+    }//GEN-LAST:event_fButton2MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -480,20 +498,21 @@ public class Stephframe extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Stephframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProfileFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Stephframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProfileFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Stephframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProfileFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Stephframe.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ProfileFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Stephframe().setVisible(true);
+                new ProfileFrame().setVisible(true);
             }
         });
     }
@@ -523,7 +542,6 @@ public class Stephframe extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
@@ -531,15 +549,13 @@ public class Stephframe extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
