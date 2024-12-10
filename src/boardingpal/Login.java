@@ -198,14 +198,11 @@ public class Login extends javax.swing.JFrame {
                                 .addComponent(tfemail, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
                                 .addComponent(LoginB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(jLabel4))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(8, 8, 8)
-                                        .addComponent(jLabel3)))
-                                .addGap(189, 189, 189))))
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel4))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(jLabel3))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -366,7 +363,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_forgotpassMouseClicked
 
     private void fButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fButton2ActionPerformed
-        // TODO add your handling code here:
+    
     }//GEN-LAST:event_fButton2ActionPerformed
 
     /**
