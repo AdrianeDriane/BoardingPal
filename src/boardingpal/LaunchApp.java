@@ -23,7 +23,106 @@ public class LaunchApp extends javax.swing.JFrame {
             "Software Engineer",
             "Filipino",
             "Christianity",
-            "I love fried Chicken and lasagnas."
+            "I love fried Chicken and lasagnas.",
+            "AdrianeDilao"
+        ));
+        
+        users.add(new User(
+            "john.doe@gmail.com", //email
+            "password123", //password
+            "John Doe", //fullName
+            25, //age
+            LocalDate.of(1998, 4, 12), //birthdate
+            "Male", //gender
+            "Data Analyst", //occupation
+            "American", //nationality
+            "Atheism", //religion
+            "I enjoy hiking and solving puzzles.", //about
+            "JohnDoe" //image url
+        ));
+
+        users.add(new User(
+            "jane.smith@yahoo.com", //email
+            "securepass", //password
+            "Jane Smith", //fullName
+            30, //age
+            LocalDate.of(1993, 1, 20), //birthdate
+            "Female", //gender
+            "Graphic Designer", //occupation
+            "Canadian", //nationality
+            "Agnostic", //religion
+            "Passionate about art and coffee.", //about
+            "JaneSmith" //image url
+        ));
+
+        users.add(new User(
+            "mike.wilson@outlook.com", //email
+            "wilson2023", //password
+            "Mike Wilson", //fullName
+            28, //age
+            LocalDate.of(1995, 7, 5), //birthdate
+            "Male", //gender
+            "Web Developer", //occupation
+            "Australian", //nationality
+            "Hinduism", //religion
+            "I’m a fitness enthusiast and tech lover.", //about
+            "MikeWilson" //image url
+        ));
+
+        users.add(new User(
+            "emma.lee@gmail.com", //email
+            "emma_lee_21", //password
+            "Emma Lee", //fullName
+            22, //age
+            LocalDate.of(2001, 3, 15), //birthdate
+            "Female", //gender
+            "Content Writer", //occupation
+            "Korean", //nationality
+            "Buddhism", //religion
+            "Avid reader and cat lover.", //about
+            "EmmaLee" //image url
+        ));
+
+        users.add(new User(
+            "luis.garcia@mail.com", //email
+            "luis_pass_789", //password
+            "Luis Garcia", //fullName
+            35, //age
+            LocalDate.of(1988, 9, 23), //birthdate
+            "Male", //gender
+            "Civil Engineer", //occupation
+            "Mexican", //nationality
+            "Christianity", //religion
+            "Family is my priority and I love tacos.", //about
+            "LuisGarcia" //image url
+        ));
+
+        users.add(new User(
+            "sophie.tan@icloud.com", //email
+            "sophiet123", //password
+            "Sophie Tan", //fullName
+            27, //age
+            LocalDate.of(1996, 6, 10), //birthdate
+            "Female", //gender
+            "UX Designer", //occupation
+            "Singaporean", //nationality
+            "Islam", //religion
+            "I enjoy traveling and sketching.", //about
+            "SophieTan" //image url
+        ));
+
+        users.add(new User(
+            "chris.brown@protonmail.com", //email
+            "chris_pass", //password
+            "Chris Brown", //fullName
+            40, //age
+            LocalDate.of(1983, 12, 2), //birthdate
+            "Male", //gender
+            "Entrepreneur", //occupation
+            "British", //nationality
+            "Judaism", //religion
+            "Always seeking new business opportunities.", //about
+            "ChrisBrown" //image url
         ));
         
         initComponents();
@@ -44,8 +143,107 @@ public class LaunchApp extends javax.swing.JFrame {
             "Software Engineer",
             "Filipino",
             "Christianity",
-            "I love fried Chicken and lasagnas."
+            "I love fried Chicken and lasagnas.",
+            "AdrianeDilao"
         ));
+        users.add(new User(
+            "john.doe@gmail.com", //email
+            "password123", //password
+            "John Doe", //fullName
+            25, //age
+            LocalDate.of(1998, 4, 12), //birthdate
+            "Male", //gender
+            "Data Analyst", //occupation
+            "American", //nationality
+            "Atheism", //religion
+            "I enjoy hiking and solving puzzles.", //about
+            "JohnDoe" //image url
+        ));
+
+        users.add(new User(
+            "jane.smith@yahoo.com", //email
+            "securepass", //password
+            "Jane Smith", //fullName
+            30, //age
+            LocalDate.of(1993, 1, 20), //birthdate
+            "Female", //gender
+            "Graphic Designer", //occupation
+            "Canadian", //nationality
+            "Agnostic", //religion
+            "Passionate about art and coffee.", //about
+            "JaneSmith" //image url
+        ));
+
+        users.add(new User(
+            "mike.wilson@outlook.com", //email
+            "wilson2023", //password
+            "Mike Wilson", //fullName
+            28, //age
+            LocalDate.of(1995, 7, 5), //birthdate
+            "Male", //gender
+            "Web Developer", //occupation
+            "Australian", //nationality
+            "Hinduism", //religion
+            "I’m a fitness enthusiast and tech lover.", //about
+            "MikeWilson" //image url
+        ));
+
+        users.add(new User(
+            "emma.lee@gmail.com", //email
+            "emma_lee_21", //password
+            "Emma Lee", //fullName
+            22, //age
+            LocalDate.of(2001, 3, 15), //birthdate
+            "Female", //gender
+            "Content Writer", //occupation
+            "Korean", //nationality
+            "Buddhism", //religion
+            "Avid reader and cat lover.", //about
+            "EmmaLee" //image url
+        ));
+
+        users.add(new User(
+            "luis.garcia@mail.com", //email
+            "luis_pass_789", //password
+            "Luis Garcia", //fullName
+            35, //age
+            LocalDate.of(1988, 9, 23), //birthdate
+            "Male", //gender
+            "Civil Engineer", //occupation
+            "Mexican", //nationality
+            "Christianity", //religion
+            "Family is my priority and I love tacos.", //about
+            "LuisGarcia" //image url
+        ));
+
+        users.add(new User(
+            "sophie.tan@icloud.com", //email
+            "sophiet123", //password
+            "Sophie Tan", //fullName
+            27, //age
+            LocalDate.of(1996, 6, 10), //birthdate
+            "Female", //gender
+            "UX Designer", //occupation
+            "Singaporean", //nationality
+            "Islam", //religion
+            "I enjoy traveling and sketching.", //about
+            "SophieTan" //image url
+        ));
+
+        users.add(new User(
+            "chris.brown@protonmail.com", //email
+            "chris_pass", //password
+            "Chris Brown", //fullName
+            40, //age
+            LocalDate.of(1983, 12, 2), //birthdate
+            "Male", //gender
+            "Entrepreneur", //occupation
+            "British", //nationality
+            "Judaism", //religion
+            "Always seeking new business opportunities.", //about
+            "ChrisBrown" //image url
+        ));
+
         initComponents();
     }
 

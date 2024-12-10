@@ -16,12 +16,13 @@ public class User {
     private String nationality;
     private String religion;
     private String about;
+    private String imageUrl;
 //    private BedSpace bedspace; // Can be null
 //    private List<Request> pendingRequests; // Tracks incoming and outgoing requests
 
     // Constructor
     public User(String email, String password, String fullName, int age, LocalDate birthdate,
-                String gender, String occupation, String nationality, String religion, String about) {
+                String gender, String occupation, String nationality, String religion, String about, String imageUrl) {
         this.email = email;
         this.password = password;
         this.fullName = fullName;
@@ -33,6 +34,7 @@ public class User {
         this.nationality = nationality;
         this.religion = religion;
         this.about = about;
+        this.imageUrl = imageUrl;
 //        this.bedspace = null; // Default is no bedspace
 //        this.pendingRequests = new ArrayList<>(); // Initialize the list
     }
@@ -132,6 +134,14 @@ public class User {
 
     public void setReligion(String religion) {
         this.religion = religion;
+    }
+    
+    public String getImageUrl(){
+        return imageUrl;
+    }
+    
+    public void setImageUrl(String imageUrl){
+        this.imageUrl = imageUrl;
     }
 
 //    public BedSpace getBedspace() {

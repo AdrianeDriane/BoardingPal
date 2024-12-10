@@ -100,6 +100,11 @@ public class LoggedIn extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Segoe UI Semibold", 0, 22)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(153, 153, 153));
         jLabel11.setText("Roommate");
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         jLabel12.setText("Boarding");
@@ -298,6 +303,14 @@ public class LoggedIn extends javax.swing.JFrame {
             profileNav.dispose();
         }
     }//GEN-LAST:event_profileNavButtonMouseClicked
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        RoommateUi2 browseRoommates = new RoommateUi2();
+        browseRoommates.setVisible(true);
+        browseRoommates.pack();
+        browseRoommates.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_jLabel11MouseClicked
 
     /**
      * @param args the command line arguments
