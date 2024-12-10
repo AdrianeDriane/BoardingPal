@@ -14,8 +14,8 @@ public class LaunchApp extends javax.swing.JFrame {
    
     public LaunchApp(String a) {
         users.add(new User(
-            "adriane@g.com",
-            "password123",
+            "test",
+            "test123",
             "Adriane Dilao",
             20,
             LocalDate.of(2004, 10, 16),
@@ -34,8 +34,8 @@ public class LaunchApp extends javax.swing.JFrame {
     
     public LaunchApp() {
         users.add(new User(
-            "adriane@g.com",
-            "password123",
+            "test",
+            "test123",
             "Adriane Dilao",
             20,
             LocalDate.of(2004, 10, 16),
