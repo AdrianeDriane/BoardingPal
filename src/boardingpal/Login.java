@@ -335,8 +335,8 @@ public class Login extends javax.swing.JFrame {
         String password = passField.getText();
 
         for (User user : users) {
-            System.out.println("User " + user.getFullName() + " is logged in!");
             if (user.getEmail().equals(email) && user.getPassword().equals(password)) {
+                System.out.println("User " + user.getFullName() + " is logged in!");
                 LaunchApp.loggedInUser = user;
                 LoggedIn loginFrame = new LoggedIn();
                 loginFrame.setVisible(true);

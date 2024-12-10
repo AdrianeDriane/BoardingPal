@@ -12,7 +12,8 @@ import static boardingpal.LaunchApp.loggedInUser;
  * @author Gil
  */
 public class LoggedIn extends javax.swing.JFrame {
-
+    Profiledrop profileNav = new Profiledrop();
+    public boolean isProfileNavDropped = false;
     /**
      * Creates new form LoggedIn
      */
@@ -129,6 +130,11 @@ public class LoggedIn extends javax.swing.JFrame {
 
         jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/down-arrow.png"))); // NOI18N
         jLabel36.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel36.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel36MouseClicked(evt);
+            }
+        });
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel14.setText("___________________");
@@ -312,6 +318,18 @@ public class LoggedIn extends javax.swing.JFrame {
     private void Next1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Next1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_Next1MouseClicked
+
+    private void jLabel36MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel36MouseClicked
+        if(!isProfileNavDropped){
+            isProfileNavDropped = true;
+            profileNav.setVisible(true);
+            profileNav.pack();
+            profileNav.setLocationRelativeTo(null);
+        } else {
+            isProfileNavDropped = false;
+            profileNav.dispose();
+        }
+    }//GEN-LAST:event_jLabel36MouseClicked
 
     /**
      * @param args the command line arguments
