@@ -1,16 +1,30 @@
 
 package boardingpal;
 
+import boardingpal.models.User;
 import java.awt.geom.RoundRectangle2D;
-
-
-
-
+import java.util.List;
+import java.util.ArrayList;
+import java.time.LocalDate;
 
 public class LaunchApp extends javax.swing.JFrame {
- 
+    public static List<User> users = new ArrayList<>();
+    
+    public static User loggedInUser = null;
    
     public LaunchApp(String a) {
+        users.add(new User(
+            "adriane@g.com",
+            "password123",
+            "Adriane Dilao",
+            20,
+            LocalDate.of(2004, 10, 16),
+            "Male",
+            "Software Engineer",
+            "Filipino",
+            "Christianity"
+        ));
+        
         initComponents();
         setLocationRelativeTo(null);
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 40, 40));
@@ -19,6 +33,17 @@ public class LaunchApp extends javax.swing.JFrame {
     }
     
     public LaunchApp() {
+        users.add(new User(
+            "adriane@g.com",
+            "password123",
+            "Adriane Dilao",
+            20,
+            LocalDate.of(2004, 10, 16),
+            "Male",
+            "Software Engineer",
+            "Filipino",
+            "Christianity"
+        ));
         initComponents();
     }
 
@@ -71,6 +96,7 @@ public class LaunchApp extends javax.swing.JFrame {
                 new LaunchApp().setVisible(true);
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

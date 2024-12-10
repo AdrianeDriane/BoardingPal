@@ -4,6 +4,8 @@
  */
 package boardingpal;
 
+import static boardingpal.LaunchApp.users;
+import boardingpal.models.User;
 import java.awt.Color;
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.JPanel;
@@ -182,6 +184,11 @@ public class Login extends javax.swing.JFrame {
                 passFieldFocusLost(evt);
             }
         });
+        passField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passFieldActionPerformed(evt);
+            }
+        });
         jPanel1.add(passField);
         passField.setBounds(10, 10, 370, 50);
 
@@ -198,14 +205,11 @@ public class Login extends javax.swing.JFrame {
                                 .addComponent(tfemail, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE)
                                 .addComponent(LoginB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(jLabel4))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(8, 8, 8)
-                                        .addComponent(jLabel3)))
-                                .addGap(189, 189, 189))))
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel4))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(jLabel3))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -327,11 +331,24 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_passFieldFocusLost
 
     private void LoginBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginBActionPerformed
-    LoggedIn loginFrame = new LoggedIn();
-    loginFrame.setVisible(true);
-    loginFrame.pack();
-    loginFrame.setLocationRelativeTo(null);
-    this.dispose();
+        String email = tfemail.getText();
+        String password = passField.getText();
+
+        for (User user : users) {
+            System.out.println("User " + user.getFullName() + " is logged in!");
+            if (user.getEmail().equals(email) && user.getPassword().equals(password)) {
+                LaunchApp.loggedInUser = user;
+                LoggedIn loginFrame = new LoggedIn();
+                loginFrame.setVisible(true);
+                loginFrame.pack();
+                loginFrame.setLocationRelativeTo(null);
+                this.dispose();
+                
+                return;
+            }
+        }
+        //TODO:
+        System.out.println("Invalid inputs");
     }//GEN-LAST:event_LoginBActionPerformed
 
     private void SignUpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SignUpMouseClicked
@@ -368,6 +385,10 @@ public class Login extends javax.swing.JFrame {
     private void fButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fButton2ActionPerformed
+
+    private void passFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passFieldActionPerformed
 
     /**
      * @param args the command line arguments
