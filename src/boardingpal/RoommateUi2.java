@@ -16,7 +16,9 @@ import java.util.stream.Collectors;
  * @author Gil
  */
 public class RoommateUi2 extends javax.swing.JFrame {
-
+    public String user1;
+    public String user2;
+    public String user3;
     /**
      * Creates new form RoommateUi2
      */
@@ -239,6 +241,12 @@ public class RoommateUi2 extends javax.swing.JFrame {
             }
         });
 
+        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel3MouseClicked(evt);
+            }
+        });
+
         cardText1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
 
         cardSubText1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -270,6 +278,12 @@ public class RoommateUi2 extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jPanel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel6MouseClicked(evt);
+            }
+        });
+
         cardText3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
 
         cardSubText3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -300,6 +314,12 @@ public class RoommateUi2 extends javax.swing.JFrame {
                 .addComponent(cardSubText3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
+
+        jPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel7MouseClicked(evt);
+            }
+        });
 
         cardText2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
 
@@ -414,6 +434,39 @@ public class RoommateUi2 extends javax.swing.JFrame {
     private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
         populateBoardMateImages();
     }//GEN-LAST:event_jLabel17MouseClicked
+    public User findUserByFullName(String fullName) {
+        for (User user : LaunchApp.users) {
+            if (user.getFullName().equals(fullName)) {
+                return user; // Return the user if the fullName matches
+            }
+        }
+        return null; // Return null if no user with the given fullName is found
+    }
+
+    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
+
+        ProfileFrame profileFrame = new ProfileFrame(false, findUserByFullName(user1));
+        profileFrame.setVisible(true);
+        profileFrame.pack();
+        profileFrame.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_jPanel3MouseClicked
+
+    private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
+        ProfileFrame profileFrame = new ProfileFrame(false, findUserByFullName(user2));
+        profileFrame.setVisible(true);
+        profileFrame.pack();
+        profileFrame.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_jPanel7MouseClicked
+
+    private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
+        ProfileFrame profileFrame = new ProfileFrame(false, findUserByFullName(user3));
+        profileFrame.setVisible(true);
+        profileFrame.pack();
+        profileFrame.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_jPanel6MouseClicked
     
     public void populateBoardMateImages(){
         Collections.shuffle(LaunchApp.users);
@@ -438,7 +491,18 @@ public class RoommateUi2 extends javax.swing.JFrame {
             String imageUrl = "/boardingpal/img/browseBoardmates/" + user.getImageUrl() + "BoardMateFind.png";
             ImageIcon icon = new ImageIcon(getClass().getResource(imageUrl));
             cardImages[i].setIcon(icon);
-
+            
+            switch(i){
+                case 0 -> {
+                    user1 = user.getFullName();
+                }
+                case 1 -> {
+                    user2 = user.getFullName();
+                }
+                case 2 -> {
+                    user3 = user.getFullName();
+                }
+            }
             // Set text and subtext
             cardTexts[i].setText(user.getFullName());
             cardSubTexts[i].setText(user.getAge() + " • " + user.getGender() + " • " + user.getNationality());
@@ -510,7 +574,6 @@ public class RoommateUi2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;

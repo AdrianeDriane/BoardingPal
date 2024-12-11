@@ -465,7 +465,7 @@
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="String.valueOf(loggedInUser.getAge()) + &quot; - &quot; + loggedInUser.getGender()" type="code"/>
+                  <Connection code="isOwnedByUser ? String.valueOf(loggedInUser.getAge()) + &quot; - &quot; + loggedInUser.getGender() : String.valueOf(user.getAge()) + &quot; - &quot; + user.getGender()" type="code"/>
                 </Property>
               </Properties>
             </Component>
@@ -743,7 +743,7 @@
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
                     <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="loggedInUser.getAbout()" type="code"/>
+                      <Connection code="isOwnedByUser ? loggedInUser.getAbout() : user.getAbout()" type="code"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="null"/>

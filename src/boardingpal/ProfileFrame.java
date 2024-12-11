@@ -6,12 +6,14 @@ package boardingpal;
 
 import java.awt.geom.RoundRectangle2D;
 import static boardingpal.LaunchApp.loggedInUser;
+import boardingpal.models.User;
 /**
  *
  * @author Gil
  */
 public class ProfileFrame extends javax.swing.JFrame {
     boolean isOwnedByUser = false;
+    User user;
     /**
      * Creates new form
      */
@@ -21,6 +23,14 @@ public class ProfileFrame extends javax.swing.JFrame {
     }
     
     public ProfileFrame(boolean isOwnedByUser) {
+        this.isOwnedByUser = isOwnedByUser;
+        initComponents();
+        setLocationRelativeTo(null);
+    }
+    
+    public ProfileFrame(boolean isOwnedByUser, User user) {
+        this.user = user;
+        System.out.println(user);
         this.isOwnedByUser = isOwnedByUser;
         initComponents();
         setLocationRelativeTo(null);
@@ -205,12 +215,12 @@ public class ProfileFrame extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel1.setText(isOwnedByUser ? loggedInUser.getFullName() : "");
+        jLabel1.setText(isOwnedByUser ? loggedInUser.getFullName() : user.getFullName());
 
         jLabel2.setBackground(new java.awt.Color(153, 153, 153));
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel2.setText(String.valueOf(loggedInUser.getAge()) + " - " + loggedInUser.getGender());
+        jLabel2.setText(isOwnedByUser ? String.valueOf(loggedInUser.getAge()) + " - " + loggedInUser.getGender() : String.valueOf(user.getAge()) + " - " + user.getGender());
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
         jLabel3.setText("About");
@@ -260,35 +270,35 @@ public class ProfileFrame extends javax.swing.JFrame {
 
         jLabel39.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel39.setText(isOwnedByUser ? loggedInUser.getFullName() : "");
+        jLabel39.setText(isOwnedByUser ? loggedInUser.getFullName() : user.getFullName());
 
         jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel40.setText(isOwnedByUser ? String.valueOf(loggedInUser.getAge()) : "");
+        jLabel40.setText(isOwnedByUser ? String.valueOf(loggedInUser.getAge()) : String.valueOf(user.getAge()));
 
         jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel41.setText(isOwnedByUser ? loggedInUser.getBirthdate().toString() : "");
+        jLabel41.setText(isOwnedByUser ? loggedInUser.getBirthdate().toString() : user.getBirthdate().toString());
 
         jLabel42.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel42.setText(isOwnedByUser ? loggedInUser.getResidenceStatus() : "");
+        jLabel42.setText(isOwnedByUser ? loggedInUser.getResidenceStatus() : user.getResidenceStatus());
 
         jLabel43.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel43.setText(isOwnedByUser ? loggedInUser.getGender() : "");
+        jLabel43.setText(isOwnedByUser ? loggedInUser.getGender() : user.getGender());
 
         jLabel44.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel44.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel44.setText(isOwnedByUser ? loggedInUser.getOccupation() : "");
+        jLabel44.setText(isOwnedByUser ? loggedInUser.getOccupation() : user.getOccupation());
 
         jLabel45.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel45.setText(isOwnedByUser ? loggedInUser.getNationality() : "");
+        jLabel45.setText(isOwnedByUser ? loggedInUser.getNationality() : user.getNationality());
 
         jLabel46.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel46.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel46.setText(isOwnedByUser ? loggedInUser.getReligion() : "");
+        jLabel46.setText(isOwnedByUser ? loggedInUser.getReligion() : user.getReligion());
 
         fButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/ArrowRight.png"))); // NOI18N
         fButton1.setText(isOwnedByUser ? "Edit Profile" : "Get in touch");
@@ -313,7 +323,7 @@ public class ProfileFrame extends javax.swing.JFrame {
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText(loggedInUser.getAbout());
+        jTextArea1.setText(isOwnedByUser ? loggedInUser.getAbout() : user.getAbout());
         jTextArea1.setBorder(null);
         jTextArea1.setFocusable(false);
         jScrollPane1.setViewportView(jTextArea1);
