@@ -196,7 +196,7 @@ public class LoggedIn extends javax.swing.JFrame {
         jLabel14.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         jPanel5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, -1, 9));
 
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/Steph.png"))); // NOI18N
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/AdrianeDilaoSmallNavbarIcon.png"))); // NOI18N
         jPanel5.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 20, -1, -1));
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 70));

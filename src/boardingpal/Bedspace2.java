@@ -4,6 +4,8 @@
  */
 package boardingpal;
 
+import static boardingpal.LaunchApp.loggedInUser;
+import boardingpal.Profiledrop;
 import boardingpal.models.BedSpace;
 import boardingpal.models.User;
 import java.awt.Image;
@@ -17,6 +19,10 @@ import javax.swing.SwingUtilities;
 public class Bedspace2 extends javax.swing.JFrame {
     boolean isOwnedByUser = false;
     BedSpace bedspace;
+    
+    Profiledrop profileNav = new Profiledrop();
+    public boolean isProfileNavDropped = false;
+        
 
     /**
      * Creates new form Bedspace2
@@ -139,15 +145,20 @@ public class Bedspace2 extends javax.swing.JFrame {
         jLabel25.setText("4");
         jPanel5.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 20, -1, -1));
 
-        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/Steph.png"))); // NOI18N
+        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/AdrianeDilaoSmallNavbarIcon.png"))); // NOI18N
         jPanel5.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 20, -1, -1));
 
         jLabel35.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel35.setText("Stephanie Echavez");
+        jLabel35.setText(loggedInUser.getFullName());
         jPanel5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 20, -1, 32));
 
         jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/down-arrow.png"))); // NOI18N
         jLabel36.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel36.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel36MouseClicked(evt);
+            }
+        });
         jPanel5.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 30, -1, -1));
 
         fButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/arrow-left.png"))); // NOI18N
@@ -395,6 +406,17 @@ public class Bedspace2 extends javax.swing.JFrame {
         loginFrame.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_fButton2MouseClicked
+
+    private void jLabel36MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel36MouseClicked
+        if(!isProfileNavDropped){
+            isProfileNavDropped = true;
+            profileNav.setVisible(true);
+            profileNav.pack();
+        } else {
+            isProfileNavDropped = false;
+            profileNav.dispose();
+        }        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel36MouseClicked
 
     /**
      * @param args the command line arguments
