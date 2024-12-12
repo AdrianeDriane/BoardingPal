@@ -202,6 +202,11 @@ public class LoggedIn extends javax.swing.JFrame {
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 70));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel3MouseClicked(evt);
+            }
+        });
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel3.add(bsImg2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 338, 226));
 
@@ -230,6 +235,11 @@ public class LoggedIn extends javax.swing.JFrame {
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, 350, 360));
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel4MouseClicked(evt);
+            }
+        });
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel4.add(bsImg1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 338, 226));
 
@@ -258,6 +268,11 @@ public class LoggedIn extends javax.swing.JFrame {
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 350, 360));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel6MouseClicked(evt);
+            }
+        });
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel6.add(bsImg3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 338, 226));
 
@@ -314,7 +329,16 @@ public class LoggedIn extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    public static BedSpace findBedspaceById(String id) {
+        for (BedSpace bedspace : LaunchApp.bedspaces) {
+            if (bedspace.getId().equals(id)) {
+                return bedspace; // Return the user if the fullName matches
+            }
+        }
+        return null; // Return null if no user with the given fullName is found
+    }
+    
     private void NextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NextMouseClicked
         Roommate roommateFrame = new Roommate();
         roommateFrame.setVisible(true);
@@ -357,6 +381,30 @@ public class LoggedIn extends javax.swing.JFrame {
     private void Back2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Back2MouseClicked
         populateBedSpaceCards();
     }//GEN-LAST:event_Back2MouseClicked
+
+    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
+        Bedspace2 bedspace = new Bedspace2(false, findBedspaceById(bedspace1));
+        bedspace.setVisible(true);
+        bedspace.pack();
+        bedspace.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_jPanel4MouseClicked
+
+    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
+        Bedspace2 bedspace = new Bedspace2(false, findBedspaceById(bedspace2));
+        bedspace.setVisible(true);
+        bedspace.pack();
+        bedspace.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_jPanel3MouseClicked
+
+    private void jPanel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseClicked
+        Bedspace2 bedspace = new Bedspace2(false, findBedspaceById(bedspace3));
+        bedspace.setVisible(true);
+        bedspace.pack();
+        bedspace.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_jPanel6MouseClicked
     
     public void populateBedSpaceCards(){
         Collections.shuffle(LaunchApp.bedspaces);

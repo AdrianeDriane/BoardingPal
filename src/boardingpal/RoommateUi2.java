@@ -434,7 +434,7 @@ public class RoommateUi2 extends javax.swing.JFrame {
     private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
         populateBoardMateImages();
     }//GEN-LAST:event_jLabel17MouseClicked
-    public User findUserByFullName(String fullName) {
+    public static User findUserByFullName(String fullName) {
         for (User user : LaunchApp.users) {
             if (user.getFullName().equals(fullName)) {
                 return user; // Return the user if the fullName matches
