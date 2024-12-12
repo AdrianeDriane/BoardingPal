@@ -2,6 +2,7 @@
 package boardingpal;
 
 import boardingpal.models.User;
+import boardingpal.models.BedSpace;
 import java.awt.geom.RoundRectangle2D;
 import java.util.List;
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import java.time.LocalDate;
 
 public class LaunchApp extends javax.swing.JFrame {
     public static List<User> users = new ArrayList<>();
+    public static List<BedSpace> bedspaces = new ArrayList<>();
     
     public static User loggedInUser = null;
    
@@ -125,11 +127,68 @@ public class LaunchApp extends javax.swing.JFrame {
             "ChrisBrown" //image url
         ));
         
+        // Create BedSpace objects and assign to users
+        bedspaces.add(new BedSpace(
+            5000, // monthlyFee
+            20, // sizePerSqm
+            true, // isAirconditioned
+            2, // occupants
+            List.of(users.get(0), users.get(1)), // roommates (Adriane and John)
+            users.get(0), // owner (Adriane)
+            "Jerkins Master Room", // bedspaceName
+            "BS001", // id
+            "123 Main St, City", // address
+            true // isBiddingOpen
+        ));
+
+        bedspaces.add(new BedSpace(
+            4500, // monthlyFee
+            18, // sizePerSqm
+            false, // isAirconditioned
+            3, // occupants
+            List.of(users.get(2), users.get(3)), // roommates (Jane and Mike)
+            users.get(2), // owner (Jane)
+            "DasJ Boarding House", // bedspaceName
+            "BS002", // id
+            "456 Maple Ave, City", // address
+            false // isBiddingOpen
+        ));
+
+        bedspaces.add(new BedSpace(
+            6000, // monthlyFee
+            25, // sizePerSqm
+            true, // isAirconditioned
+            1, // occupants
+            List.of(users.get(4)), // roommates (Emma)
+            users.get(4), // owner (Emma)
+            "Ronald's BalayBalay", // bedspaceName
+            "BS003", // id
+            "789 Oak Rd, City", // address
+            true // isBiddingOpen
+        ));
+
+        bedspaces.add(new BedSpace(
+            7000, // monthlyFee
+            30, // sizePerSqm
+            true, // isAirconditioned
+            2, // occupants
+            List.of(users.get(5)), // roommates (Luis and Sophie)
+            users.get(5), // owner (Luis)
+            "Jom Boardinganan", // bedspaceName
+            "BS004", // id
+            "101 Pine Ln, City", // address
+            true // isBiddingOpen
+        ));
+
+        // Now set the bedspaces for each user (based on their ownership)
+        users.get(0).setBedspace(bedspaces.get(0));
+        users.get(2).setBedspace(bedspaces.get(1));
+        users.get(4).setBedspace(bedspaces.get(2));
+        users.get(5).setBedspace(bedspaces.get(3));
+
         initComponents();
         setLocationRelativeTo(null);
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 40, 40));
-        
-        
     }
     
     public LaunchApp() {

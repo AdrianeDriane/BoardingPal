@@ -17,7 +17,7 @@ public class User {
     private String religion;
     private String about;
     private String imageUrl;
-//    private BedSpace bedspace; // Can be null
+    private BedSpace bedspace; // Can be null
 //    private List<Request> pendingRequests; // Tracks incoming and outgoing requests
 
     // Constructor
@@ -35,7 +35,25 @@ public class User {
         this.religion = religion;
         this.about = about;
         this.imageUrl = imageUrl;
-//        this.bedspace = null; // Default is no bedspace
+        this.bedspace = null; // Default is no bedspace
+//        this.pendingRequests = new ArrayList<>(); // Initialize the list
+    }
+    
+    public User(String email, String password, String fullName, int age, LocalDate birthdate,
+                String gender, String occupation, String nationality, String religion, String about, String imageUrl, BedSpace bedspace) {
+        this.email = email;
+        this.password = password;
+        this.fullName = fullName;
+        this.age = age;
+        this.birthdate = birthdate;
+        this.gender = gender;
+        this.residenceStatus = "N/A"; // Default status
+        this.occupation = occupation;
+        this.nationality = nationality;
+        this.religion = religion;
+        this.about = about;
+        this.imageUrl = imageUrl;
+        this.bedspace = bedspace; // Default is no bedspace
 //        this.pendingRequests = new ArrayList<>(); // Initialize the list
     }
     
@@ -144,14 +162,14 @@ public class User {
         this.imageUrl = imageUrl;
     }
 
-//    public BedSpace getBedspace() {
-//        return bedspace;
-//    }
-//
-//    public void setBedspace(BedSpace bedspace) {
-//        this.bedspace = bedspace;
-//        this.residenceStatus = (bedspace != null) ? bedspace.getLocation() : "N/A";
-//    }
+    public BedSpace getBedspace() {
+        return bedspace;
+    }
+
+    public void setBedspace(BedSpace bedspace) {
+        this.bedspace = bedspace;
+        this.residenceStatus = (bedspace != null) ? bedspace.getAddress() : "N/A";
+    }
 //
 //    public List<Request> getPendingRequests() {
 //        return pendingRequests;
