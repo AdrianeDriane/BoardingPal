@@ -4,8 +4,11 @@
  */
 package boardingpal;
 
+import boardingpal.models.BedSpace;
+import boardingpal.models.User;
 import java.awt.Color;
 import java.awt.geom.RoundRectangle2D;
+import java.util.List;
 
 /**
  *
@@ -56,6 +59,11 @@ public class Profiledrop extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semibold", 0, 16)); // NOI18N
         jLabel2.setText("Bed Space");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI Semibold", 0, 16)); // NOI18N
         jLabel3.setText("About Us");
@@ -119,6 +127,30 @@ public class Profiledrop extends javax.swing.JFrame {
         profileFrame.pack();
         this.dispose();
     }//GEN-LAST:event_viewProfileMouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        List<User> temp = List.of(
+            LaunchApp.loggedInUser
+        );
+        BedSpace bedspace = LaunchApp.loggedInUser.getBedspace() == null
+                ? new BedSpace(
+                        0, 
+                        0, 
+                        false, 
+                        0, 
+                        temp, 
+                        LaunchApp.loggedInUser, 
+                        "Set Bedspace Name", 
+                        String.format("BS%03d", LaunchApp.bedspaces.size() + 1), 
+                        "Set Address", 
+                        true)
+                : LaunchApp.loggedInUser.getBedspace();
+        Bedspace2 bedspaceForm = new Bedspace2(true, bedspace);
+        bedspaceForm.setVisible(true);
+        bedspaceForm.pack();
+        bedspaceForm.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments

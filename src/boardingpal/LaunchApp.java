@@ -128,18 +128,18 @@ public class LaunchApp extends javax.swing.JFrame {
         ));
         
         // Create BedSpace objects and assign to users
-        bedspaces.add(new BedSpace(
-            5000, // monthlyFee
-            20, // sizePerSqm
-            true, // isAirconditioned
-            2, // occupants
-            List.of(users.get(0), users.get(1)), // roommates (Adriane and John)
-            users.get(0), // owner (Adriane)
-            "Jerkins Master Room", // bedspaceName
-            "BS001", // id
-            "123 Main St, City", // address
-            true // isBiddingOpen
-        ));
+//        bedspaces.add(new BedSpace(
+//            5000, // monthlyFee
+//            20, // sizePerSqm
+//            true, // isAirconditioned
+//            2, // occupants
+//            List.of(users.get(0), users.get(1)), // roommates (Adriane and John)
+//            users.get(0), // owner (Adriane)
+//            "Jerkins Master Room", // bedspaceName
+//            "BS001", // id
+//            "123 Main St, City", // address
+//            true // isBiddingOpen
+//        ));
 
         bedspaces.add(new BedSpace(
             4500, // monthlyFee
@@ -181,10 +181,10 @@ public class LaunchApp extends javax.swing.JFrame {
         ));
 
         // Now set the bedspaces for each user (based on their ownership)
-        users.get(0).setBedspace(bedspaces.get(0));
-        users.get(2).setBedspace(bedspaces.get(1));
-        users.get(4).setBedspace(bedspaces.get(2));
-        users.get(5).setBedspace(bedspaces.get(3));
+//        users.get(0).setBedspace(bedspaces.get(0));
+        users.get(2).setBedspace(bedspaces.get(0));
+        users.get(4).setBedspace(bedspaces.get(1));
+        users.get(5).setBedspace(bedspaces.get(2));
 
         initComponents();
         setLocationRelativeTo(null);
@@ -304,18 +304,18 @@ public class LaunchApp extends javax.swing.JFrame {
         ));
         
         // Create BedSpace objects and assign to users
-        bedspaces.add(new BedSpace(
-            5000, // monthlyFee
-            20, // sizePerSqm
-            true, // isAirconditioned
-            2, // occupants
-            List.of(users.get(0), users.get(1)), // roommates (Adriane and John)
-            users.get(0), // owner (Adriane)
-            "Jerkins Master Room", // bedspaceName
-            "BS001", // id
-            "123 Main St, City", // address
-            true // isBiddingOpen
-        ));
+//        bedspaces.add(new BedSpace(
+//            5000, // monthlyFee
+//            20, // sizePerSqm
+//            true, // isAirconditioned
+//            2, // occupants
+//            List.of(users.get(0), users.get(1)), // roommates (Adriane and John)
+//            users.get(0), // owner (Adriane)
+//            "Jerkins Master Room", // bedspaceName
+//            "BS001", // id
+//            "123 Main St, City", // address
+//            true // isBiddingOpen
+//        ));
 
         bedspaces.add(new BedSpace(
             4500, // monthlyFee
@@ -357,10 +357,10 @@ public class LaunchApp extends javax.swing.JFrame {
         ));
 
         // Now set the bedspaces for each user (based on their ownership)
-        users.get(0).setBedspace(bedspaces.get(0));
-        users.get(2).setBedspace(bedspaces.get(1));
-        users.get(4).setBedspace(bedspaces.get(2));
-        users.get(5).setBedspace(bedspaces.get(3));
+//        users.get(0).setBedspace(bedspaces.get(0));
+        users.get(2).setBedspace(bedspaces.get(0));
+        users.get(4).setBedspace(bedspaces.get(1));
+        users.get(5).setBedspace(bedspaces.get(2));
 
         initComponents();
         setLocationRelativeTo(null);

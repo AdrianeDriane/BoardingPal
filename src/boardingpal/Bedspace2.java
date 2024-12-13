@@ -244,7 +244,7 @@ public class Bedspace2 extends javax.swing.JFrame {
         );
 
         fButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/ArrowRight.png"))); // NOI18N
-        fButton1.setText("Get in touch");
+        fButton1.setText(isOwnedByUser ? "Edit Bedspace" : "Get in touch");
         fButton1.setFillClick(new java.awt.Color(0, 0, 0));
         fButton1.setFillOver(new java.awt.Color(0, 0, 0));
         fButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
@@ -280,12 +280,12 @@ public class Bedspace2 extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(bedspaceAddress))
                     .addComponent(bedspaceName))
-                .addGap(544, 544, 544)
+                .addGap(595, 595, 595)
                 .addComponent(fButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(98, 98, 98)
                 .addComponent(bedspaceImg, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
+                .addGap(125, 125, 125)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addComponent(jLabel16)
@@ -400,7 +400,8 @@ public class Bedspace2 extends javax.swing.JFrame {
 
             // Check if dimensions are valid
             if (width > 0 && height > 0) {
-                String imageUrl = "/boardingpal/img/browseBedspace/" + bedspace.getId() + ".png";
+                boolean bedspaceNoImage = isOwnedByUser && bedspace.getAddress() == "Set Address";
+                String imageUrl = bedspaceNoImage ? "/boardingpal/img/browseBedspace/default.png" : "/boardingpal/img/browseBedspace/" + bedspace.getId() + ".png";
                 ImageIcon icon = new ImageIcon(getClass().getResource(imageUrl));
 
                 // Scale the image to the JLabel's size
