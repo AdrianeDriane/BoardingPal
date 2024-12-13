@@ -9,6 +9,7 @@ import boardingpal.Profiledrop;
 import boardingpal.models.BedSpace;
 import boardingpal.models.User;
 import java.awt.Image;
+import java.awt.geom.RoundRectangle2D;
 import javax.swing.ImageIcon;
 import javax.swing.SwingUtilities;
 
@@ -30,12 +31,14 @@ public class Bedspace2 extends javax.swing.JFrame {
     public Bedspace2() {
         initComponents();
         setLocationRelativeTo(null);
+        setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 40, 40));
     }
     
     public Bedspace2(boolean isOwnedByUser) {
         this.isOwnedByUser = isOwnedByUser;
         initComponents();
         setLocationRelativeTo(null);
+        setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 40, 40));
     }
     
     public Bedspace2(boolean isOwnedByUser, BedSpace bedspace) {
@@ -43,6 +46,7 @@ public class Bedspace2 extends javax.swing.JFrame {
         this.isOwnedByUser = isOwnedByUser;
         initComponents();
         setLocationRelativeTo(null);
+        setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 40, 40));
     }
 
     /**
@@ -93,6 +97,11 @@ public class Bedspace2 extends javax.swing.JFrame {
         bedspaceImg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1366, 766));
+        setMinimumSize(new java.awt.Dimension(1366, 766));
+        setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(1366, 766));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setMaximumSize(new java.awt.Dimension(1366, 768));
@@ -112,6 +121,11 @@ public class Bedspace2 extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Segoe UI Semibold", 0, 22)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(153, 153, 153));
         jLabel11.setText("Roommate");
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
         jPanel5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(551, 21, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Semibold", 0, 24)); // NOI18N
@@ -417,6 +431,14 @@ public class Bedspace2 extends javax.swing.JFrame {
             profileNav.dispose();
         }        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel36MouseClicked
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        RoommateUi2 browseRoommates = new RoommateUi2();
+        browseRoommates.setVisible(true);
+        browseRoommates.pack();
+        browseRoommates.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_jLabel11MouseClicked
 
     /**
      * @param args the command line arguments
