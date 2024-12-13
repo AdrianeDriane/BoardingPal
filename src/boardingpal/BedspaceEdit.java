@@ -10,6 +10,7 @@ import boardingpal.models.BedSpace;
 import boardingpal.models.User;
 import java.awt.Image;
 import java.awt.geom.RoundRectangle2D;
+import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.SwingUtilities;
 
@@ -17,7 +18,7 @@ import javax.swing.SwingUtilities;
  *
  * @author Gil
  */
-public class Bedspace2 extends javax.swing.JFrame {
+public class BedspaceEdit extends javax.swing.JFrame {
     boolean isOwnedByUser = false;
     BedSpace bedspace;
     
@@ -28,20 +29,20 @@ public class Bedspace2 extends javax.swing.JFrame {
     /**
      * Creates new form Bedspace2
      */
-    public Bedspace2() {
+    public BedspaceEdit() {
         initComponents();
         setLocationRelativeTo(null);
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 40, 40));
     }
     
-    public Bedspace2(boolean isOwnedByUser) {
+    public BedspaceEdit(boolean isOwnedByUser) {
         this.isOwnedByUser = isOwnedByUser;
         initComponents();
         setLocationRelativeTo(null);
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 40, 40));
     }
     
-    public Bedspace2(boolean isOwnedByUser, BedSpace bedspace) {
+    public BedspaceEdit(boolean isOwnedByUser, BedSpace bedspace) {
         this.bedspace = bedspace;
         this.isOwnedByUser = isOwnedByUser;
         initComponents();
@@ -73,17 +74,11 @@ public class Bedspace2 extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         fButton2 = new boardingPal.FButton();
-        bedspaceName = new javax.swing.JLabel();
-        bedspaceAddress = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        numberOfOccupants = new javax.swing.JLabel();
-        isAircon = new javax.swing.JLabel();
-        sizePerSqm = new javax.swing.JLabel();
-        monthlyFee = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
@@ -93,9 +88,14 @@ public class Bedspace2 extends javax.swing.JFrame {
         jLabel42 = new javax.swing.JLabel();
         fButton1 = new boardingPal.FButton();
         jLabel19 = new javax.swing.JLabel();
-        address = new javax.swing.JLabel();
         bedspaceImg = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
+        tfName = new javax.swing.JTextField();
+        tfMonthlyFee = new javax.swing.JTextField();
+        tfSize = new javax.swing.JTextField();
+        tfAircon = new javax.swing.JTextField();
+        tfOccupants = new javax.swing.JTextField();
+        tfAddress = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1366, 766));
@@ -186,13 +186,6 @@ public class Bedspace2 extends javax.swing.JFrame {
             }
         });
 
-        bedspaceName.setFont(new java.awt.Font("Segoe UI Semibold", 0, 36)); // NOI18N
-        bedspaceName.setText(bedspace.getBedspaceName());
-
-        bedspaceAddress.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        bedspaceAddress.setForeground(new java.awt.Color(153, 153, 153));
-        bedspaceAddress.setText(bedspace.getAddress());
-
         jLabel4.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel4.setText("Details");
 
@@ -211,18 +204,6 @@ public class Bedspace2 extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(102, 102, 102));
         jLabel18.setText("Max Occupants");
-
-        numberOfOccupants.setFont(new java.awt.Font("Segoe UI Semibold", 0, 16)); // NOI18N
-        numberOfOccupants.setText(String.valueOf(bedspace.getOccupants()));
-
-        isAircon.setFont(new java.awt.Font("Segoe UI Semibold", 0, 16)); // NOI18N
-        isAircon.setText(bedspace.isAirconditioned() ? "Yes" : "No");
-
-        sizePerSqm.setFont(new java.awt.Font("Segoe UI Semibold", 0, 16)); // NOI18N
-        sizePerSqm.setText(String.valueOf(bedspace.getSizePerSqm()) + " sqm");
-
-        monthlyFee.setFont(new java.awt.Font("Segoe UI Semibold", 0, 16)); // NOI18N
-        monthlyFee.setText("₱ " + bedspace.getMonthlyFee());
 
         jLabel37.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel37.setText("Your Roommates");
@@ -244,7 +225,7 @@ public class Bedspace2 extends javax.swing.JFrame {
         );
 
         fButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/ArrowRight.png"))); // NOI18N
-        fButton1.setText(isOwnedByUser ? "Edit Bedspace" : "Get in touch");
+        fButton1.setText("Confirm Changes");
         fButton1.setFillClick(new java.awt.Color(0, 0, 0));
         fButton1.setFillOver(new java.awt.Color(0, 0, 0));
         fButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
@@ -256,13 +237,15 @@ public class Bedspace2 extends javax.swing.JFrame {
                 fButton1MouseClicked(evt);
             }
         });
+        fButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(102, 102, 102));
         jLabel19.setText("Address");
-
-        address.setFont(new java.awt.Font("Segoe UI Semibold", 0, 16)); // NOI18N
-        address.setText(bedspace.getAddress());
 
         bedspaceImg.setMaximumSize(new java.awt.Dimension(360, 300));
         bedspaceImg.setMinimumSize(new java.awt.Dimension(360, 300));
@@ -271,23 +254,65 @@ public class Bedspace2 extends javax.swing.JFrame {
         jLabel45.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel45.setText(bedspace.getRoommates().size() > 2 ? "+" + String.valueOf(bedspace.getRoommates().size() - 2) + " more" : "");
 
+        tfName.setFont(new java.awt.Font("Segoe UI Semibold", 0, 36)); // NOI18N
+        tfName.setText(bedspace.getBedspaceName());
+        tfName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfNameActionPerformed(evt);
+            }
+        });
+
+        tfMonthlyFee.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        tfMonthlyFee.setText(String.valueOf(bedspace.getMonthlyFee()));
+        tfMonthlyFee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfMonthlyFeeActionPerformed(evt);
+            }
+        });
+
+        tfSize.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        tfSize.setText(String.valueOf(bedspace.getSizePerSqm()));
+        tfSize.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfSizeActionPerformed(evt);
+            }
+        });
+
+        tfAircon.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        tfAircon.setText(bedspace.isAirconditioned() ? "Yes" : "No");
+        tfAircon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfAirconActionPerformed(evt);
+            }
+        });
+
+        tfOccupants.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        tfOccupants.setText(String.valueOf(bedspace.getOccupants()));
+        tfOccupants.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfOccupantsActionPerformed(evt);
+            }
+        });
+
+        tfAddress.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        tfAddress.setText(bedspace.getAddress());
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addComponent(fButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 1370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(bedspaceAddress))
-                    .addComponent(bedspaceName))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 1370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84)
+                        .addComponent(fButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(tfName)
+                        .addGap(395, 395, 395)
+                        .addComponent(fButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(98, 98, 98)
                         .addComponent(bedspaceImg, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -299,14 +324,14 @@ public class Bedspace2 extends javax.swing.JFrame {
                             .addComponent(jLabel17)
                             .addComponent(jLabel18)
                             .addComponent(jLabel19))
-                        .addGap(44, 44, 44)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(monthlyFee)
-                            .addComponent(sizePerSqm)
-                            .addComponent(isAircon)
-                            .addComponent(numberOfOccupants)
-                            .addComponent(address))
-                        .addGap(165, 165, 165)
+                        .addGap(53, 53, 53)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tfOccupants)
+                            .addComponent(tfAddress)
+                            .addComponent(tfMonthlyFee, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                            .addComponent(tfSize)
+                            .addComponent(tfAircon))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel37)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -320,25 +345,22 @@ public class Bedspace2 extends javax.swing.JFrame {
                                     .addComponent(jLabel43)
                                     .addComponent(jLabel39)
                                     .addComponent(jLabel42)
-                                    .addComponent(jLabel45)))
-                            .addComponent(fButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 0, Short.MAX_VALUE))
+                                    .addComponent(jLabel45))))))
+                .addGap(130, 130, 130))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(57, 57, 57)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(fButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(fButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(bedspaceName)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(fButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bedspaceAddress))))
+                        .addComponent(fButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)))
+                .addGap(3, 3, 3)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(71, 71, 71)
@@ -355,15 +377,15 @@ public class Bedspace2 extends javax.swing.JFrame {
                         .addComponent(jLabel19))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(121, 121, 121)
-                        .addComponent(monthlyFee)
-                        .addGap(12, 12, 12)
-                        .addComponent(sizePerSqm)
-                        .addGap(12, 12, 12)
-                        .addComponent(isAircon)
-                        .addGap(12, 12, 12)
-                        .addComponent(numberOfOccupants)
-                        .addGap(12, 12, 12)
-                        .addComponent(address))
+                        .addComponent(tfMonthlyFee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(tfSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(tfAircon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(tfOccupants, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)
+                        .addComponent(tfAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(71, 71, 71)
                         .addComponent(jLabel37)
@@ -386,7 +408,7 @@ public class Bedspace2 extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(62, 62, 62)
                         .addComponent(bedspaceImg, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(201, Short.MAX_VALUE))
+                .addContainerGap(198, Short.MAX_VALUE))
         );
 
         String rm1ImageUrl = "/boardingpal/img/browseBoardmates/" + bedspace.getRoommates().get(0).getImageUrl() + "BoardMateFind.png";
@@ -462,16 +484,67 @@ public class Bedspace2 extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabel11MouseClicked
 
+    private void tfSizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfSizeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfSizeActionPerformed
+
+    private void tfAirconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAirconActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfAirconActionPerformed
+
+    private void tfNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfNameActionPerformed
+
+    private void tfMonthlyFeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfMonthlyFeeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfMonthlyFeeActionPerformed
+
+    private void tfOccupantsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfOccupantsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfOccupantsActionPerformed
+
+    private void fButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fButton1ActionPerformed
+
     private void fButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fButton1MouseClicked
-        if(isOwnedByUser) {
-            BedspaceEdit bedspaceEdit = new BedspaceEdit(isOwnedByUser, bedspace);
-            bedspaceEdit.setVisible(true);
-            bedspaceEdit.setLocationRelativeTo(null);
-            bedspaceEdit.pack();
-            this.dispose();
+        boolean isFirstTime = loggedInUser.getBedspace() == null;
+        List<User> temp = List.of(LaunchApp.loggedInUser);
+
+        // If first time, add a new bedspace
+        if (isFirstTime) {
+            BedSpace newBedspace = new BedSpace(
+                Float.parseFloat(tfMonthlyFee.getText()),
+                Float.parseFloat(tfSize.getText()),
+                tfAircon.getText().equalsIgnoreCase("Yes"),
+                Integer.parseInt(tfOccupants.getText()),
+                temp,
+                LaunchApp.loggedInUser,
+                tfName.getText(),
+                String.format("BS%03d", LaunchApp.bedspaces.size() + 1),
+                tfAddress.getText(),
+                true
+            );
+            LaunchApp.bedspaces.add(newBedspace);
+            loggedInUser.setBedspace(newBedspace); // Link the bedspace to the user
         } else {
-            
+            // Edit the existing bedspace
+            BedSpace existingBedspace = loggedInUser.getBedspace();
+            existingBedspace.setMonthlyFee(Float.parseFloat(tfMonthlyFee.getText()));
+            existingBedspace.setSizePerSqm(Float.parseFloat(tfSize.getText()));
+            existingBedspace.setAirconditioned(tfAircon.getText().equalsIgnoreCase("Yes"));
+            existingBedspace.setOccupants(Integer.parseInt(tfOccupants.getText()));
+            existingBedspace.setBedspaceName(tfName.getText());
+            existingBedspace.setAddress(tfAddress.getText());
         }
+
+        // Open the Bedspace2 form
+        Bedspace2 bedspaceForm = new Bedspace2(true, loggedInUser.getBedspace());
+        bedspaceForm.setVisible(true);
+        bedspaceForm.pack();
+        bedspaceForm.setLocationRelativeTo(null);
+        this.dispose();
     }//GEN-LAST:event_fButton1MouseClicked
 
     /**
@@ -491,32 +564,29 @@ public class Bedspace2 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Bedspace2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BedspaceEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Bedspace2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BedspaceEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Bedspace2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BedspaceEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Bedspace2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BedspaceEdit.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Bedspace2().setVisible(true);
+                new BedspaceEdit().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel address;
-    private javax.swing.JLabel bedspaceAddress;
     private javax.swing.JLabel bedspaceImg;
-    private javax.swing.JLabel bedspaceName;
     private boardingPal.FButton fButton1;
     private boardingPal.FButton fButton2;
-    private javax.swing.JLabel isAircon;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -545,8 +615,11 @@ public class Bedspace2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel monthlyFee;
-    private javax.swing.JLabel numberOfOccupants;
-    private javax.swing.JLabel sizePerSqm;
+    private javax.swing.JTextField tfAddress;
+    private javax.swing.JTextField tfAircon;
+    private javax.swing.JTextField tfMonthlyFee;
+    private javax.swing.JTextField tfName;
+    private javax.swing.JTextField tfOccupants;
+    private javax.swing.JTextField tfSize;
     // End of variables declaration//GEN-END:variables
 }
