@@ -95,12 +95,11 @@ public class Bedspace2 extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         address = new javax.swing.JLabel();
         bedspaceImg = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1366, 766));
         setMinimumSize(new java.awt.Dimension(1366, 766));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1366, 766));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -228,23 +227,21 @@ public class Bedspace2 extends javax.swing.JFrame {
         jLabel37.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel37.setText("Your Roommates");
 
-        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/Ellipse 3 (2).png"))); // NOI18N
-
         jLabel38.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel38.setText("Annette Black");
+        jLabel38.setText(bedspace.getRoommates().get(0).getFullName());
 
         jLabel43.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jLabel43.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel43.setText("24  -  Male ");
-
-        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/Ellipse 4 (1).png"))); // NOI18N
+        jLabel43.setText(String.valueOf(bedspace.getRoommates().get(0).getAge()) + " • " + bedspace.getRoommates().get(0).getGender()
+        );
 
         jLabel39.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel39.setText("Annette Black");
+        jLabel39.setText(bedspace.getRoommates().size() >= 2 ? bedspace.getRoommates().get(1).getFullName() : "");
 
         jLabel42.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel42.setText("24  -  Female ");
+        jLabel42.setText(bedspace.getRoommates().size() >= 2 ? String.valueOf(bedspace.getRoommates().get(1).getAge()) + " • " + bedspace.getRoommates().get(1).getGender() : ""
+        );
 
         fButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/ArrowRight.png"))); // NOI18N
         fButton1.setText("Get in touch");
@@ -265,6 +262,9 @@ public class Bedspace2 extends javax.swing.JFrame {
         bedspaceImg.setMaximumSize(new java.awt.Dimension(360, 300));
         bedspaceImg.setMinimumSize(new java.awt.Dimension(360, 300));
         bedspaceImg.setPreferredSize(new java.awt.Dimension(360, 300));
+
+        jLabel45.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel45.setText(bedspace.getRoommates().size() > 2 ? "+" + String.valueOf(bedspace.getRoommates().size() - 2) + " more" : "");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -304,20 +304,17 @@ public class Bedspace2 extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel37)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
+                        .addGap(12, 12, 12)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(15, 15, 15)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel40)
-                                .addGap(10, 10, 10)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel38)
-                                    .addComponent(jLabel43)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel41)
-                                .addGap(12, 12, 12)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel39)
-                                    .addComponent(jLabel42)))))))
+                            .addComponent(jLabel38)
+                            .addComponent(jLabel43)
+                            .addComponent(jLabel39)
+                            .addComponent(jLabel42)
+                            .addComponent(jLabel45)))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -362,25 +359,40 @@ public class Bedspace2 extends javax.swing.JFrame {
                         .addGap(71, 71, 71)
                         .addComponent(jLabel37)
                         .addGap(30, 30, 30)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel40)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel38)
                                 .addGap(3, 3, 3)
-                                .addComponent(jLabel43)))
+                                .addComponent(jLabel43))
+                            .addComponent(jLabel40, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(30, 30, 30)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel41)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel39)
                                 .addGap(3, 3, 3)
-                                .addComponent(jLabel42))))
+                                .addComponent(jLabel42))
+                            .addComponent(jLabel41, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel45))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(62, 62, 62)
                         .addComponent(bedspaceImg, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(201, Short.MAX_VALUE))
         );
 
+        String rm1ImageUrl = "/boardingpal/img/browseBoardmates/" + bedspace.getRoommates().get(0).getImageUrl() + "BoardMateFind.png";
+        ImageIcon rm1Icon = new ImageIcon(getClass().getResource(rm1ImageUrl));
+
+        Image rm1Image = rm1Icon.getImage().getScaledInstance(38, 38, Image.SCALE_SMOOTH);
+        jLabel40.setIcon(new ImageIcon(rm1Image));
+        if (bedspace.getRoommates().size() >= 2){
+            String rm2ImageUrl = "/boardingpal/img/browseBoardmates/" + bedspace.getRoommates().get(1).getImageUrl() + "BoardMateFind.png";
+            ImageIcon rm2Icon = new ImageIcon(getClass().getResource(rm2ImageUrl));
+
+            Image rm2Image = rm2Icon.getImage().getScaledInstance(38, 38, Image.SCALE_SMOOTH);
+            jLabel41.setIcon(new ImageIcon(rm2Image));
+
+        }
         SwingUtilities.invokeLater(() -> {
             // Get the dimensions of the JLabel after it has been rendered
             int width = bedspaceImg.getWidth();
@@ -507,6 +519,7 @@ public class Bedspace2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel45;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator1;

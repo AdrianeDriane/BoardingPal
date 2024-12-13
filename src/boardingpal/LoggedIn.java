@@ -69,33 +69,29 @@ public class LoggedIn extends javax.swing.JFrame {
         bsAddress2 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
+        card2Owner = new javax.swing.JLabel();
+        card2NoOfRoommates = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         bsImg1 = new javax.swing.JLabel();
         bsName1 = new javax.swing.JLabel();
         bsAddress1 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
+        card1Owner = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        card1NoOfRoommates = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         bsImg3 = new javax.swing.JLabel();
         bsName3 = new javax.swing.JLabel();
         bsAddress3 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
+        card3Owner = new javax.swing.JLabel();
+        card3NoOfRoommates = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         Back2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1366, 766));
         setMinimumSize(new java.awt.Dimension(1366, 766));
         setUndecorated(true);
         setResizable(false);
@@ -226,7 +222,9 @@ public class LoggedIn extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel5.setText("Your roommates");
+        jLabel5.setText("No. of Roommates");
+
+        card2NoOfRoommates.setText("1");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -235,23 +233,23 @@ public class LoggedIn extends javax.swing.JFrame {
             .addComponent(bsImg2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(22, 22, 22)
-                            .addComponent(jLabel5)
-                            .addGap(121, 121, 121)
-                            .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(10, 10, 10)
-                            .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(10, 10, 10)
-                            .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addGap(14, 14, 14)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(bsAddress2, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(bsName2, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(0, 17, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel5)
+                        .addGap(148, 148, 148)
+                        .addComponent(card2NoOfRoommates, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(card2Owner, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(bsAddress2, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(bsName2, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(12, 12, 12)))))
+                .addGap(0, 5, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,13 +263,11 @@ public class LoggedIn extends javax.swing.JFrame {
                 .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel34, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel5)
+                        .addComponent(card2NoOfRoommates))
+                    .addComponent(card2Owner, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, 350, 360));
@@ -295,13 +291,15 @@ public class LoggedIn extends javax.swing.JFrame {
 
         jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel19.setText("Your roommates");
+        jLabel19.setText("No. of Roommates");
 
         jLabel16.setBackground(new java.awt.Color(255, 255, 255));
         jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(153, 153, 153));
         jLabel16.setToolTipText("");
         jLabel16.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(153, 153, 153)));
+
+        card1NoOfRoommates.setText("1");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -313,18 +311,16 @@ public class LoggedIn extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(jLabel19)
-                        .addGap(121, 121, 121)
-                        .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(135, 135, 135)
+                        .addComponent(card1NoOfRoommates, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(card1Owner, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(bsAddress1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(bsName1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(10, 20, Short.MAX_VALUE))
+                .addGap(17, 17, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -346,13 +342,11 @@ public class LoggedIn extends javax.swing.JFrame {
                     .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel19)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel38, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel19)
+                        .addComponent(card1NoOfRoommates))
+                    .addComponent(card1Owner, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 350, 360));
@@ -376,7 +370,9 @@ public class LoggedIn extends javax.swing.JFrame {
 
         jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel28.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel28.setText("Your roommates");
+        jLabel28.setText("No. of Roommates");
+
+        card3NoOfRoommates.setText("1");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -388,18 +384,16 @@ public class LoggedIn extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(jLabel28)
-                        .addGap(121, 121, 121)
-                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(148, 148, 148)
+                        .addComponent(card3NoOfRoommates, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(card3Owner, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(bsName3, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(bsAddress3, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addGap(0, 11, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -417,13 +411,11 @@ public class LoggedIn extends javax.swing.JFrame {
                 .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel28)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel28)
+                        .addComponent(card3NoOfRoommates))
+                    .addComponent(card3Owner, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 330, 350, 360));
@@ -548,6 +540,8 @@ public class LoggedIn extends javax.swing.JFrame {
         JLabel[] bedspaceImages = {bsImg1, bsImg2, bsImg3};
         JLabel[] bedspaceName = {bsName1, bsName2, bsName3};
         JLabel[] bedspaceAddress = {bsAddress1, bsAddress2, bsAddress3};
+        JLabel[] bedspaceOwnerImg = {card1Owner, card2Owner, card3Owner};
+        JLabel[] bedspaceNoOfRm = {card1NoOfRoommates, card2NoOfRoommates, card3NoOfRoommates};
     
         for (int i = 0; i < Math.min(3, randomBedSpaces.size()); i++) {
             BedSpace bedspace = randomBedSpaces.get(i); // Avoid multiple calls to randomUsers.get(i)
@@ -572,8 +566,16 @@ public class LoggedIn extends javax.swing.JFrame {
                 }
             }
             // Set text and subtext
+            String ownerImageUrl = "/boardingpal/img/browseBoardmates/" + bedspace.getIsOwnedBy().getImageUrl()+ "BoardMateFind.png";
+            ImageIcon ownerIcon = new ImageIcon(getClass().getResource(ownerImageUrl));
+
+            // Scale the image to the JLabel's size
+            Image ownerImage = ownerIcon.getImage().getScaledInstance(bedspaceOwnerImg[i].getWidth(), bedspaceOwnerImg[i].getHeight(), Image.SCALE_SMOOTH);
+            bedspaceOwnerImg[i].setIcon(new ImageIcon(ownerImage));
+            
             bedspaceName[i].setText(bedspace.getBedspaceName());
             bedspaceAddress[i].setText(bedspace.getAddress());
+            bedspaceNoOfRm[i].setText(String.valueOf(bedspace.getRoommates().size()));
         }
     }
     /**
@@ -622,6 +624,12 @@ public class LoggedIn extends javax.swing.JFrame {
     private javax.swing.JLabel bsName1;
     private javax.swing.JLabel bsName2;
     private javax.swing.JLabel bsName3;
+    private javax.swing.JLabel card1NoOfRoommates;
+    private javax.swing.JLabel card1Owner;
+    private javax.swing.JLabel card2NoOfRoommates;
+    private javax.swing.JLabel card2Owner;
+    private javax.swing.JLabel card3NoOfRoommates;
+    private javax.swing.JLabel card3Owner;
     private boardingPal.FButton fButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -637,19 +645,10 @@ public class LoggedIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
