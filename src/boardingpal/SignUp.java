@@ -1,7 +1,7 @@
 
 package boardingpal;
 
-import static boardingpal.LaunchApp.users;
+import static boardingpal.BoardingPal.users;
 import boardingpal.models.User;
 import java.awt.Color;
 import java.awt.geom.RoundRectangle2D;

@@ -248,11 +248,7 @@ public class LandingPage extends javax.swing.JFrame {
     }//GEN-LAST:event_fButton2ActionPerformed1
 
     private void NextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NextMouseClicked
-       Roommate roommateFrame = new Roommate();
-       roommateFrame.setVisible(true);
-       roommateFrame.pack();
-       roommateFrame.setLocationRelativeTo(null);
-      this.dispose();
+
     }//GEN-LAST:event_NextMouseClicked
 
     /**

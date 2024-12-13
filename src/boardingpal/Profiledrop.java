@@ -76,6 +76,11 @@ public class Profiledrop extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semibold", 0, 16)); // NOI18N
         jLabel6.setText("Log Out");
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,27 +135,36 @@ public class Profiledrop extends javax.swing.JFrame {
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         List<User> temp = List.of(
-            LaunchApp.loggedInUser
+            BoardingPal.loggedInUser
         );
-        BedSpace bedspace = LaunchApp.loggedInUser.getBedspace() == null
+        BedSpace bedspace = BoardingPal.loggedInUser.getBedspace() == null
                 ? new BedSpace(
                         0, 
                         0, 
                         false, 
                         0, 
                         temp, 
-                        LaunchApp.loggedInUser, 
+                        BoardingPal.loggedInUser, 
                         "Set Bedspace Name", 
-                        String.format("BS%03d", LaunchApp.bedspaces.size() + 1), 
+                        String.format("BS%03d", BoardingPal.bedspaces.size() + 1), 
                         "Set Address", 
                         true)
-                : LaunchApp.loggedInUser.getBedspace();
+                : BoardingPal.loggedInUser.getBedspace();
         Bedspace2 bedspaceForm = new Bedspace2(true, bedspace);
         bedspaceForm.setVisible(true);
         bedspaceForm.pack();
         bedspaceForm.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        BoardingPal.loggedInUser = null;
+        LandingPage landing = new LandingPage();
+        landing.setVisible(true);
+        landing.setLocationRelativeTo(null);
+        landing.pack();
+        this.dispose();
+    }//GEN-LAST:event_jLabel6MouseClicked
 
     /**
      * @param args the command line arguments

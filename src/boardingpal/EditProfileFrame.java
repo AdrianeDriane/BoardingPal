@@ -5,7 +5,7 @@
 package boardingpal;
 
 import java.awt.geom.RoundRectangle2D;
-import static boardingpal.LaunchApp.loggedInUser;
+import static boardingpal.BoardingPal.loggedInUser;
 import boardingpal.models.User;
 import java.time.LocalDate;
 import javax.swing.ImageIcon;
@@ -81,10 +81,8 @@ Profiledrop profileNav = new Profiledrop();
         jLabel36 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1366, 766));
         setMinimumSize(new java.awt.Dimension(1366, 768));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1366, 766));
         setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -272,7 +270,7 @@ Profiledrop profileNav = new Profiledrop();
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/AdrianeDilaoSmallNavbarIcon.png"))); // NOI18N
 
         jLabel35.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jLabel35.setText(LaunchApp.loggedInUser.getFullName());
+        jLabel35.setText(BoardingPal.loggedInUser.getFullName());
 
         jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/down-arrow.png"))); // NOI18N
         jLabel36.setVerticalAlignment(javax.swing.SwingConstants.TOP);

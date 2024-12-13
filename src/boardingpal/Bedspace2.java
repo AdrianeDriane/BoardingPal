@@ -4,7 +4,7 @@
  */
 package boardingpal;
 
-import static boardingpal.LaunchApp.loggedInUser;
+import static boardingpal.BoardingPal.loggedInUser;
 import boardingpal.Profiledrop;
 import boardingpal.models.BedSpace;
 import boardingpal.models.User;

@@ -5,7 +5,7 @@
 package boardingpal;
 
 import java.awt.geom.RoundRectangle2D;
-import static boardingpal.LaunchApp.loggedInUser;
+import static boardingpal.BoardingPal.loggedInUser;
 import boardingpal.models.BedSpace;
 import boardingpal.models.User;
 import java.awt.Image;
@@ -447,7 +447,7 @@ public class LoggedIn extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     public static BedSpace findBedspaceById(String id) {
-        for (BedSpace bedspace : LaunchApp.bedspaces) {
+        for (BedSpace bedspace : BoardingPal.bedspaces) {
             if (bedspace.getId().equals(id)) {
                 return bedspace; // Return the user if the fullName matches
             }
@@ -523,12 +523,12 @@ public class LoggedIn extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel6MouseClicked
     
     public void populateBedSpaceCards(){
-        Collections.shuffle(LaunchApp.bedspaces);
+        Collections.shuffle(BoardingPal.bedspaces);
         
         List<BedSpace> randomBedSpaces;
-        randomBedSpaces = LaunchApp.bedspaces.subList(0, Math.min(3, LaunchApp.bedspaces.size()));
+        randomBedSpaces = BoardingPal.bedspaces.subList(0, Math.min(3, BoardingPal.bedspaces.size()));
         
-        if (randomBedSpaces.contains(LaunchApp.loggedInUser.getBedspace())) {
+        if (randomBedSpaces.contains(BoardingPal.loggedInUser.getBedspace())) {
             populateBedSpaceCards(); // Rerun the method if the logged-in user is included
             return; // Exit the current execution to prevent further processing
         }

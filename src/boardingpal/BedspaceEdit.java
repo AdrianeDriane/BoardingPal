@@ -4,7 +4,7 @@
  */
 package boardingpal;
 
-import static boardingpal.LaunchApp.loggedInUser;
+import static boardingpal.BoardingPal.loggedInUser;
 import boardingpal.Profiledrop;
 import boardingpal.models.BedSpace;
 import boardingpal.models.User;
@@ -510,7 +510,7 @@ public class BedspaceEdit extends javax.swing.JFrame {
 
     private void fButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fButton1MouseClicked
         boolean isFirstTime = loggedInUser.getBedspace() == null;
-        List<User> temp = List.of(LaunchApp.loggedInUser);
+        List<User> temp = List.of(BoardingPal.loggedInUser);
 
         // If first time, add a new bedspace
         if (isFirstTime) {
@@ -520,13 +520,13 @@ public class BedspaceEdit extends javax.swing.JFrame {
                 tfAircon.getText().equalsIgnoreCase("Yes"),
                 Integer.parseInt(tfOccupants.getText()),
                 temp,
-                LaunchApp.loggedInUser,
+                BoardingPal.loggedInUser,
                 tfName.getText(),
-                String.format("BS%03d", LaunchApp.bedspaces.size() + 1),
+                String.format("BS%03d", BoardingPal.bedspaces.size() + 1),
                 tfAddress.getText(),
                 true
             );
-            LaunchApp.bedspaces.add(newBedspace);
+            BoardingPal.bedspaces.add(newBedspace);
             loggedInUser.setBedspace(newBedspace); // Link the bedspace to the user
         } else {
             // Edit the existing bedspace

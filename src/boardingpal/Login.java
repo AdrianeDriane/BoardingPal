@@ -4,7 +4,7 @@
  */
 package boardingpal;
 
-import static boardingpal.LaunchApp.users;
+import static boardingpal.BoardingPal.users;
 import boardingpal.models.User;
 import java.awt.Color;
 import java.awt.geom.RoundRectangle2D;
@@ -337,7 +337,7 @@ public class Login extends javax.swing.JFrame {
         for (User user : users) {
             if (user.getEmail().equals(email) && user.getPassword().equals(password)) {
                 System.out.println("User " + user.getFullName() + " is logged in!");
-                LaunchApp.loggedInUser = user;
+                BoardingPal.loggedInUser = user;
                 LoggedIn loginFrame = new LoggedIn();
                 loginFrame.setVisible(true);
                 loginFrame.pack();
