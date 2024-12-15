@@ -537,10 +537,6 @@ public class NotifDrop extends javax.swing.JFrame {
     }//GEN-LAST:event_notif1AcceptActionPerformed
 
     private void notif1RejectMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_notif1RejectMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_notif1RejectMouseClicked
-
-    private void notif1RejectKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_notif1RejectKeyPressed
         userRequests.get(0).setAccepted(false);
         userRequests.get(0).setResolved(true);
         System.out.println(userRequests.get(0));
@@ -549,7 +545,11 @@ public class NotifDrop extends javax.swing.JFrame {
         notif1Txt.setText("");
         notif1Accept.setVisible(false);
         notif1Reject.setVisible(false);
-        this.dispose();
+        this.dispose();       
+    }//GEN-LAST:event_notif1RejectMouseClicked
+
+    private void notif1RejectKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_notif1RejectKeyPressed
+        
     }//GEN-LAST:event_notif1RejectKeyPressed
 
     private void notif1ImgMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_notif1ImgMouseClicked
