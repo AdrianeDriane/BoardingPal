@@ -69,7 +69,6 @@ public class Bedspace2 extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
@@ -152,12 +151,6 @@ public class Bedspace2 extends javax.swing.JFrame {
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel5.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 10, -1, 55));
-
-        jLabel25.setBackground(new java.awt.Color(255, 51, 51));
-        jLabel25.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel25.setText("4");
-        jPanel5.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 20, -1, -1));
 
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/AdrianeDilaoSmallNavbarIcon.png"))); // NOI18N
         jPanel5.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 20, -1, -1));
@@ -553,7 +546,6 @@ public class Bedspace2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;

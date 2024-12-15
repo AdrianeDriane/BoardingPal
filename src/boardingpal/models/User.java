@@ -19,7 +19,7 @@ public class User {
     private String imageUrl;
     private BedSpace bedspace; // Can be null
     private List<String> conversationsId;
-//    private List<Request> pendingRequests; // Tracks incoming and outgoing requests
+    private List<Request> pendingRequests; // Tracks incoming and outgoing requests
 
     // Constructor
     public User(String email, String password, String fullName, int age, LocalDate birthdate,
@@ -181,16 +181,16 @@ public class User {
         this.bedspace = bedspace;
         this.residenceStatus = (bedspace != null) ? bedspace.getAddress() : "N/A";
     }
-//
-//    public List<Request> getPendingRequests() {
-//        return pendingRequests;
-//    }
-//
-//    public void addPendingRequest(Request request) {
-//        this.pendingRequests.add(request);
-//    }
-//
-//    public void removePendingRequest(Request request) {
-//        this.pendingRequests.remove(request);
-//    }
+
+    public List<Request> getPendingRequests() {
+        return pendingRequests;
+    }
+
+    public void addPendingRequest(Request request) {
+        this.pendingRequests.add(request);
+    }
+
+    public void removePendingRequest(Request request) {
+        this.pendingRequests.remove(request);
+    }
 }

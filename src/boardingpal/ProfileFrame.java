@@ -65,7 +65,6 @@ public class ProfileFrame extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
@@ -139,11 +138,6 @@ public class ProfileFrame extends javax.swing.JFrame {
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jLabel25.setBackground(new java.awt.Color(255, 51, 51));
-        jLabel25.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel25.setText("4");
-
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/AdrianeDilaoSmallNavbarIcon.png"))); // NOI18N
 
         jLabel35.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -182,9 +176,7 @@ public class ProfileFrame extends javax.swing.JFrame {
                         .addComponent(jLabel23)
                         .addGap(29, 29, 29)
                         .addComponent(jLabel24)
-                        .addGap(0, 0, 0)
-                        .addComponent(jLabel25)
-                        .addGap(26, 26, 26)
+                        .addGap(33, 33, 33)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(14, 14, 14)
                         .addComponent(jLabel26)
@@ -216,7 +208,6 @@ public class ProfileFrame extends javax.swing.JFrame {
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(9, 9, 9)
                                 .addComponent(jLabel24))
-                            .addComponent(jLabel25)
                             .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(13, 13, 13)
@@ -625,7 +616,6 @@ public class ProfileFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel31;

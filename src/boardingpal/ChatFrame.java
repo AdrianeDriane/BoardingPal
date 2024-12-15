@@ -190,7 +190,6 @@ public class ChatFrame extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel25 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         profileNavButton = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -329,12 +328,6 @@ public class ChatFrame extends javax.swing.JFrame {
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel5.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 10, -1, 49));
-
-        jLabel25.setBackground(new java.awt.Color(255, 51, 51));
-        jLabel25.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel25.setText("4");
-        jPanel5.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 10, 10, -1));
 
         jLabel35.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel35.setText(loggedInUser.getFullName());
@@ -1894,7 +1887,6 @@ public class ChatFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
@@ -1915,20 +1907,13 @@ public class ChatFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
-    private javax.swing.JPanel jPanel24;
-    private javax.swing.JPanel jPanel25;
-    private javax.swing.JPanel jPanel26;
-    private javax.swing.JPanel jPanel27;
     private javax.swing.JPanel jPanel28;
     private javax.swing.JPanel jPanel29;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel32;
     private javax.swing.JPanel jPanel33;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
@@ -1964,13 +1949,5 @@ public class ChatFrame extends javax.swing.JFrame {
     private boardingpal.RoundTextField right9;
     private boardingpal.RoundTextField roundTextField14;
     private boardingpal.RoundTextField roundTextField2;
-    private boardingpal.RoundTextField roundTextField39;
-    private boardingpal.RoundTextField roundTextField40;
-    private boardingpal.RoundTextField roundTextField41;
-    private boardingpal.RoundTextField roundTextField42;
-    private boardingpal.RoundTextField roundTextField43;
-    private boardingpal.RoundTextField roundTextField44;
-    private boardingpal.RoundTextField roundTextField45;
-    private boardingpal.RoundTextField roundTextField46;
     // End of variables declaration//GEN-END:variables
 }
