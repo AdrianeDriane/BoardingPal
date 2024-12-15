@@ -13,14 +13,24 @@ public class Request {
     private BedSpace bedspace;
     private boolean isResolved;
     private boolean isAccepted;
+    private String rqstMessage;
 
     // Parameterized constructor
-    public Request(User requester, BedSpace bedspace) {
+    public Request(String rqstMessage, User requester, BedSpace bedspace) {
+        this.rqstMessage = rqstMessage;
         this.requester = requester;
         this.bedspace = bedspace;
         this.isResolved = false;
     }
 
+    public String getRequestMessage(){
+        return rqstMessage;
+    }
+    
+    public void setRequestMessage(String rqstMessage){
+        this.rqstMessage = rqstMessage;
+    }
+    
     // Getter for requester
     public User getRequester() {
         return requester;

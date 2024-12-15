@@ -152,7 +152,7 @@ public class BoardingPal {
             18, // sizePerSqm
             false, // isAirconditioned
             3, // occupants
-            List.of(users.get(2), users.get(3), users.get(6), users.get(7)), // roommates (Jane and Mike)
+            List.of(users.get(2)), // roommates (Jane and Mike)
             users.get(2), // owner (Jane)
             "DasJ Boarding House", // bedspaceName
             "BS002", // id

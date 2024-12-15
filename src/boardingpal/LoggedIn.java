@@ -25,6 +25,8 @@ public class LoggedIn extends javax.swing.JFrame {
     
     Profiledrop profileNav = new Profiledrop();
     public boolean isProfileNavDropped = false;
+    NotifDrop notifDrop = new NotifDrop();
+    public boolean isNotifDropped = false;
     /**
      * Creates new form LoggedIn
      */
@@ -56,7 +58,7 @@ public class LoggedIn extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
+        notifButton = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel35 = new javax.swing.JLabel();
         profileNavButton = new javax.swing.JLabel();
@@ -169,10 +171,15 @@ public class LoggedIn extends javax.swing.JFrame {
         });
         jPanel5.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 20, 30, -1));
 
-        jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/bell (1).png"))); // NOI18N
-        jLabel24.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jLabel24.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        jPanel5.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 20, -1, -1));
+        notifButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/bell (1).png"))); // NOI18N
+        notifButton.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        notifButton.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        notifButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                notifButtonMouseClicked(evt);
+            }
+        });
+        jPanel5.add(notifButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 20, -1, -1));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel5.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 10, -1, 49));
@@ -527,6 +534,17 @@ public class LoggedIn extends javax.swing.JFrame {
         chatFrame.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_jLabel23MouseClicked
+
+    private void notifButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_notifButtonMouseClicked
+        if(!isNotifDropped){
+            isNotifDropped = true;
+            notifDrop.setVisible(true);
+            notifDrop.pack();
+        } else {
+            isNotifDropped = false;
+            notifDrop.dispose();
+        }
+    }//GEN-LAST:event_notifButtonMouseClicked
     
     public void populateBedSpaceCards(){
         Collections.shuffle(BoardingPal.bedspaces);
@@ -645,7 +663,6 @@ public class LoggedIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
@@ -659,6 +676,7 @@ public class LoggedIn extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel notifButton;
     private javax.swing.JLabel profileNavButton;
     private boardingpal.RoundTextField roundTextField1;
     // End of variables declaration//GEN-END:variables

@@ -11,6 +11,7 @@ import boardingpal.models.BedSpace;
 import boardingpal.models.Conversation;
 import boardingpal.models.User;
 import boardingpal.models.Message;
+import boardingpal.models.Request;
 import java.awt.Color;
 import java.awt.Image;
 import java.util.Collections;
@@ -1641,7 +1642,13 @@ public class ChatFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_roundTextField2ActionPerformed
 
     private void fButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fButton1MouseClicked
-
+        Conversation convo = getConversationsOwnedByUser(loggedInUser).get(currentOpenedConvoIndex);
+        Request request = new Request(
+            loggedInUser.getFullName() + " has requested to join your bedspace.",
+            loggedInUser,
+            convo.getBedspaceOwner().getBedspace()
+        );
+        convo.getBedspaceOwner().addPendingRequest(request);
     }//GEN-LAST:event_fButton1MouseClicked
 
     private void fButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fButton1ActionPerformed

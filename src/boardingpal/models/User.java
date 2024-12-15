@@ -3,6 +3,7 @@ package boardingpal.models;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class User {
     private String email;
@@ -38,7 +39,7 @@ public class User {
         this.imageUrl = imageUrl;
         this.bedspace = null; // Default is no bedspace
         this.conversationsId = new ArrayList<>();
-//        this.pendingRequests = new ArrayList<>(); // Initialize the list
+        this.pendingRequests = new ArrayList<>(); // Initialize the list
     }
     
     public User(String email, String password, String fullName, int age, LocalDate birthdate,
@@ -56,7 +57,7 @@ public class User {
         this.about = about;
         this.imageUrl = imageUrl;
         this.bedspace = bedspace; // Default is no bedspace
-//        this.pendingRequests = new ArrayList<>(); // Initialize the list
+        this.pendingRequests = new ArrayList<>(); // Initialize the list
         this.conversationsId = new ArrayList<>();
     }
     
@@ -183,7 +184,9 @@ public class User {
     }
 
     public List<Request> getPendingRequests() {
-        return pendingRequests;
+        return pendingRequests.stream()
+        .filter(request -> !request.isResolved())
+        .collect(Collectors.toList());
     }
 
     public void addPendingRequest(Request request) {

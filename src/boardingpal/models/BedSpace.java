@@ -1,5 +1,6 @@
 package boardingpal.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BedSpace {
@@ -22,7 +23,7 @@ public class BedSpace {
         this.sizePerSqm = sizePerSqm;
         this.isAirconditioned = isAirconditioned;
         this.occupants = occupants;
-        this.roommates = roommates;
+        this.roommates = new ArrayList<>(roommates);
         this.isOwnedBy = isOwnedBy;
         this.bedspaceName = bedspaceName;
         this.id = id;
@@ -69,6 +70,10 @@ public class BedSpace {
 
     public void setRoommates(List<User> roommates) {
         this.roommates = roommates;
+    }
+    
+    public void addRoommates(User roommate){
+        this.roommates.add(roommate);
     }
 
     public User getIsOwnedBy() {
