@@ -51,6 +51,7 @@ public class ChatFrame extends javax.swing.JFrame {
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 40, 40));
         populateConversations();
         setMessageDefaultColor();
+        setProfileImage();
     }
     
     public ChatFrame(boolean isOwnedByUser) {
@@ -60,6 +61,8 @@ public class ChatFrame extends javax.swing.JFrame {
         this.isOwnedByUser = isOwnedByUser;
         populateConversations();
         setMessageDefaultColor();
+        setProfileImage();
+        
     }
 
     public void setMessageDefaultColor() {
@@ -194,7 +197,6 @@ public class ChatFrame extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         profileNavButton = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel29 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -330,9 +332,9 @@ public class ChatFrame extends javax.swing.JFrame {
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel5.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 10, -1, 49));
 
-        jLabel35.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel35.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel35.setText(loggedInUser.getFullName());
-        jPanel5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 20, -1, 32));
+        jPanel5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 20, -1, 32));
 
         profileNavButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/down-arrow.png"))); // NOI18N
         profileNavButton.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -347,9 +349,6 @@ public class ChatFrame extends javax.swing.JFrame {
         jLabel14.setText("___________________");
         jLabel14.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         jPanel5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, -1, 9));
-
-        jLabel30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/AdrianeDilaoSmallNavbarIcon.png"))); // NOI18N
-        jPanel5.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 20, -1, -1));
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -1649,6 +1648,8 @@ public class ChatFrame extends javax.swing.JFrame {
             convo.getBedspaceOwner().getBedspace()
         );
         convo.getBedspaceOwner().addPendingRequest(request);
+        fButton1.setEnabled(false);
+        fButton1.setText("Requested");
     }//GEN-LAST:event_fButton1MouseClicked
 
     private void fButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fButton1ActionPerformed
@@ -1805,7 +1806,12 @@ public class ChatFrame extends javax.swing.JFrame {
             .filter(chat -> userConversationIds.contains(chat.getChat_id()))
             .collect(Collectors.toList());
         Conversation convo = userConversations.get(index);
-        jLabel8.setText(convo.getTitle() + convo.getBedspaceOwner().getFullName());
+        if(convo.getBedspaceOwner().equals(loggedInUser)){
+            jLabel8.setText(convo.getTitle() + convo.getInquirer().getFullName());
+        } else {
+            jLabel8.setText(convo.getTitle() + convo.getBedspaceOwner().getFullName());
+        }
+        
         BedSpace bedspace = convo.getBedspaceOwner().getBedspace();
         String imageUrl = "/boardingpal/img/browseBedspace/" + bedspace.getId() + ".png";
         ImageIcon icon = new ImageIcon(getClass().getResource(imageUrl));
@@ -1817,10 +1823,12 @@ public class ChatFrame extends javax.swing.JFrame {
         jLabel6.setText(convo.getBedspaceOwner().getBedspace().getAddress());
         Image image2 = icon.getImage().getScaledInstance(jLabel5.getWidth(), jLabel5.getHeight(), Image.SCALE_SMOOTH);
         jLabel5.setIcon(new ImageIcon(image2)); 
-        isRequestButtonOpen = true;
+        isRequestButtonOpen = convo.getBedspaceOwner().equals(loggedInUser) ? false : true;
         fButton1.setVisible(isRequestButtonOpen);
     }
    
+    public void setProfileImage(){
+    }
     /**
      * @param args the command line arguments
      */
@@ -1896,7 +1904,6 @@ public class ChatFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;

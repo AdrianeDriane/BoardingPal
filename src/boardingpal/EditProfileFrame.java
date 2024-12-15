@@ -4,9 +4,10 @@
  */
 package boardingpal;
 
-import java.awt.geom.RoundRectangle2D;
 import static boardingpal.BoardingPal.loggedInUser;
+import java.awt.geom.RoundRectangle2D;
 import boardingpal.models.User;
+import java.awt.Image;
 import java.time.LocalDate;
 import javax.swing.ImageIcon;
 /**
@@ -24,6 +25,7 @@ Profiledrop profileNav = new Profiledrop();
         initComponents();
         setLocationRelativeTo(null);
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 40, 40));
+        setProfileImage();
     }
     
     public EditProfileFrame(boolean isOwnedByUser) {
@@ -31,6 +33,7 @@ Profiledrop profileNav = new Profiledrop();
         initComponents();
         setLocationRelativeTo(null);
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 40, 40));
+        setProfileImage();
     }
 
     /**
@@ -75,7 +78,7 @@ Profiledrop profileNav = new Profiledrop();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel26 = new javax.swing.JLabel();
+        profilepic = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
 
@@ -261,9 +264,7 @@ Profiledrop profileNav = new Profiledrop();
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/AdrianeDilaoSmallNavbarIcon.png"))); // NOI18N
-
-        jLabel35.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel35.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel35.setText(BoardingPal.loggedInUser.getFullName());
 
         jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/down-arrow.png"))); // NOI18N
@@ -294,8 +295,8 @@ Profiledrop profileNav = new Profiledrop();
                 .addGap(28, 28, 28)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24)
-                .addComponent(jLabel26)
-                .addGap(18, 18, 18)
+                .addComponent(profilepic)
+                .addGap(0, 0, 0)
                 .addComponent(jLabel35)
                 .addGap(31, 31, 31)
                 .addComponent(jLabel36))
@@ -325,7 +326,7 @@ Profiledrop profileNav = new Profiledrop();
                             .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(13, 13, 13)
-                                .addComponent(jLabel26))
+                                .addComponent(profilepic))
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(7, 7, 7)
                                 .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -422,7 +423,15 @@ Profiledrop profileNav = new Profiledrop();
             profileNav.dispose();
         }
     }//GEN-LAST:event_jLabel36MouseClicked
-
+    
+        
+    public void setProfileImage(){
+        String imageUrl = "/boardingpal/img/browseBoardmates/" + loggedInUser.getImageUrl() + "BoardMateFind.png";
+            ImageIcon icon = new ImageIcon(getClass().getResource(imageUrl));
+            
+            Image image = icon.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+            profilepic.setIcon(new ImageIcon(image));
+    }
     /**
      * @param args the command line arguments
      */
@@ -475,7 +484,6 @@ Profiledrop profileNav = new Profiledrop();
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
@@ -493,6 +501,7 @@ Profiledrop profileNav = new Profiledrop();
     private javax.swing.JTextField nameTf;
     private javax.swing.JTextField nationalityTf;
     private javax.swing.JTextField occupationTf;
+    private javax.swing.JLabel profilepic;
     private javax.swing.JTextField religionTf;
     private javax.swing.JTextField residenceStatusTf;
     // End of variables declaration//GEN-END:variables

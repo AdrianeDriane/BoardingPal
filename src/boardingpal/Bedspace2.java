@@ -33,6 +33,7 @@ public class Bedspace2 extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 40, 40));
+        setProfileImage();
     }
     
     public Bedspace2(boolean isOwnedByUser) {
@@ -40,6 +41,7 @@ public class Bedspace2 extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 40, 40));
+        setProfileImage();
     }
     
     public Bedspace2(boolean isOwnedByUser, BedSpace bedspace) {
@@ -48,6 +50,7 @@ public class Bedspace2 extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 40, 40));
+        setProfileImage();
     }
 
     /**
@@ -69,7 +72,6 @@ public class Bedspace2 extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel26 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
         fButton2 = new boardingPal.FButton();
@@ -152,12 +154,9 @@ public class Bedspace2 extends javax.swing.JFrame {
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel5.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 10, -1, 55));
 
-        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/AdrianeDilaoSmallNavbarIcon.png"))); // NOI18N
-        jPanel5.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 20, -1, -1));
-
-        jLabel35.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel35.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel35.setText(loggedInUser.getFullName());
-        jPanel5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 20, -1, 32));
+        jPanel5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 20, -1, 32));
 
         jLabel36.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/down-arrow.png"))); // NOI18N
         jLabel36.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -491,6 +490,8 @@ public class Bedspace2 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_fButton1MouseClicked
 
+    public void setProfileImage(){
+    }
     /**
      * @param args the command line arguments
      */
@@ -546,7 +547,6 @@ public class Bedspace2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;

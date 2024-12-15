@@ -13,6 +13,7 @@ import java.util.Collections;
 import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -35,6 +36,7 @@ public class LoggedIn extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 40, 40));
         populateBedSpaceCards();
+        setProfileImage();
     }
 
     /**
@@ -63,7 +65,6 @@ public class LoggedIn extends javax.swing.JFrame {
         jLabel35 = new javax.swing.JLabel();
         profileNavButton = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         bsImg2 = new javax.swing.JLabel();
         bsName2 = new javax.swing.JLabel();
@@ -184,9 +185,9 @@ public class LoggedIn extends javax.swing.JFrame {
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel5.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 10, -1, 49));
 
-        jLabel35.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel35.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel35.setText(loggedInUser.getFullName());
-        jPanel5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 20, -1, 32));
+        jPanel5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 20, -1, 32));
 
         profileNavButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/down-arrow.png"))); // NOI18N
         profileNavButton.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -201,9 +202,6 @@ public class LoggedIn extends javax.swing.JFrame {
         jLabel14.setText("___________________");
         jLabel14.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         jPanel5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, -1, 9));
-
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/AdrianeDilaoSmallNavbarIcon.png"))); // NOI18N
-        jPanel5.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 20, -1, -1));
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1366, 70));
 
@@ -546,6 +544,10 @@ public class LoggedIn extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_notifButtonMouseClicked
     
+    public void setProfileImage(){
+        
+    }
+    
     public void populateBedSpaceCards(){
         Collections.shuffle(BoardingPal.bedspaces);
         
@@ -665,7 +667,6 @@ public class LoggedIn extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
