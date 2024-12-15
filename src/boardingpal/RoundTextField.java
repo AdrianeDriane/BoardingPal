@@ -34,6 +34,7 @@ public class RoundTextField extends JTextField {
 
     public void setFillColor(Color fillColor) {
         this.fillColor = fillColor;
+        repaint();
     }
 
     public Color getLineColor() {
@@ -42,6 +43,7 @@ public class RoundTextField extends JTextField {
 
     public void setLineColor(Color lineColor) {
         this.lineColor = lineColor;
+        repaint();
     }
 
     public int getStrokeWidth() {

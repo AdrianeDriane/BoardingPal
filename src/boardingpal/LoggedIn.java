@@ -163,6 +163,11 @@ public class LoggedIn extends javax.swing.JFrame {
         jPanel5.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, -1, -1));
 
         jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/message.png"))); // NOI18N
+        jLabel23.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel23MouseClicked(evt);
+            }
+        });
         jPanel5.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 20, 30, -1));
 
         jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/bell (1).png"))); // NOI18N
@@ -521,6 +526,14 @@ public class LoggedIn extends javax.swing.JFrame {
         bedspace.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_jPanel6MouseClicked
+
+    private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
+        ChatFrame chatFrame = new ChatFrame(true);
+        chatFrame.setVisible(true);
+        chatFrame.pack();
+        chatFrame.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_jLabel23MouseClicked
     
     public void populateBedSpaceCards(){
         Collections.shuffle(BoardingPal.bedspaces);
