@@ -5,6 +5,7 @@
 package boardingpal;
 
 import boardingpal.models.BedSpace;
+import boardingpal.models.Conversation;
 import boardingpal.models.User;
 import java.awt.geom.RoundRectangle2D;
 import java.time.LocalDate;
@@ -14,6 +15,7 @@ import java.util.List;
 public class BoardingPal {
     public static List<User> users = new ArrayList<>();
     public static List<BedSpace> bedspaces = new ArrayList<>();
+    public static List<Conversation> conversations = new ArrayList<>();
     
     public static User loggedInUser = null;
    

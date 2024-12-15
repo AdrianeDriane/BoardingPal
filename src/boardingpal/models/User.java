@@ -18,6 +18,7 @@ public class User {
     private String about;
     private String imageUrl;
     private BedSpace bedspace; // Can be null
+    private List<String> conversationsId;
 //    private List<Request> pendingRequests; // Tracks incoming and outgoing requests
 
     // Constructor
@@ -36,6 +37,7 @@ public class User {
         this.about = about;
         this.imageUrl = imageUrl;
         this.bedspace = null; // Default is no bedspace
+        this.conversationsId = new ArrayList<>();
 //        this.pendingRequests = new ArrayList<>(); // Initialize the list
     }
     
@@ -55,6 +57,7 @@ public class User {
         this.imageUrl = imageUrl;
         this.bedspace = bedspace; // Default is no bedspace
 //        this.pendingRequests = new ArrayList<>(); // Initialize the list
+        this.conversationsId = new ArrayList<>();
     }
     
     public User(String email, String password, String fullName) {
@@ -66,6 +69,14 @@ public class User {
     }
 
     // Getters and Setters
+    public List<String> getConversationsId(){
+        return conversationsId;
+    }
+    
+    public void addConversation(String id){
+        this.conversationsId.add(id);
+    }
+    
     public String getAbout(){
         return about;
     }    

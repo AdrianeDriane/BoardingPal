@@ -7,6 +7,7 @@ package boardingpal;
 import static boardingpal.BoardingPal.loggedInUser;
 import boardingpal.Profiledrop;
 import boardingpal.models.BedSpace;
+import boardingpal.models.Conversation;
 import boardingpal.models.User;
 import java.awt.Image;
 import java.awt.geom.RoundRectangle2D;
@@ -470,7 +471,30 @@ public class Bedspace2 extends javax.swing.JFrame {
             bedspaceEdit.pack();
             this.dispose();
         } else {
-            
+            // Check if the conversation already exists
+            Conversation existingChat = BoardingPal.conversations.stream()
+                .filter(chat -> chat.getInquirer().equals(loggedInUser) && chat.getBedspaceOwner().equals(bedspace.getIsOwnedBy()))
+                .findFirst()
+                .orElse(null);
+
+            if (existingChat == null) {
+                String convoId = String.format("BS%03d", BoardingPal.conversations.size() + 1);
+                Conversation newConversation = new Conversation(
+                    loggedInUser,
+                    bedspace.getIsOwnedBy(),
+                    bedspace.getBedspaceName() + ": ",
+                    convoId
+                );
+
+                BoardingPal.conversations.add(newConversation);
+                loggedInUser.addConversation(convoId);
+                bedspace.getIsOwnedBy().addConversation(convoId);
+            }
+
+            ChatFrame chatFrame = new ChatFrame(bedspace.getIsOwnedBy().equals(loggedInUser));
+            chatFrame.setVisible(true);
+            chatFrame.setLocationRelativeTo(null);
+            chatFrame.pack();
         }
     }//GEN-LAST:event_fButton1MouseClicked
 
