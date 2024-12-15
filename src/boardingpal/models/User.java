@@ -65,9 +65,20 @@ public class User {
         this.email = email;
         this.password = password;
         this.fullName = fullName;
-//        this.bedspace = null; // Default is no bedspace
-//        this.pendingRequests = new ArrayList<>(); // Initialize the list
+        this.age = 18; // Default or placeholder age
+        this.birthdate = LocalDate.now(); // Placeholder for current date as birthdate
+        this.gender = "Not Specified"; // Default gender
+        this.residenceStatus = "N/A"; // Default status
+        this.occupation = "Unemployed"; // Default occupation
+        this.nationality = "Unknown"; // Default nationality
+        this.religion = "Not Specified"; // Default religion
+        this.about = "No details provided."; // Default about information
+        this.imageUrl = fullName.replace(" ", ""); // Placeholder for a default image
+        this.bedspace = null; // Default is no bedspace
+        this.pendingRequests = new ArrayList<>(); // Initialize the list
+        this.conversationsId = new ArrayList<>(); // Initialize the list
     }
+
 
     // Getters and Setters
     public List<String> getConversationsId(){
@@ -184,7 +195,7 @@ public class User {
     }
 
     public List<Request> getPendingRequests() {
-        return pendingRequests.stream()
+        return pendingRequests.isEmpty() ? new ArrayList<Request>() : pendingRequests.stream()
         .filter(request -> !request.isResolved())
         .collect(Collectors.toList());
     }

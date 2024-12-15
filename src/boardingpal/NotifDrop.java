@@ -10,6 +10,7 @@ import boardingpal.models.User;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.geom.RoundRectangle2D;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
 
@@ -18,14 +19,15 @@ import javax.swing.ImageIcon;
  * @author Gil
  */
 public class NotifDrop extends javax.swing.JFrame {
-    List<Request> userRequests = BoardingPal.loggedInUser.getPendingRequests();
+    List<Request> userRequests;
     
     public NotifDrop() { 
+        userRequests = BoardingPal.loggedInUser.getPendingRequests();
         initComponents();
         getContentPane().setBackground(Color.white);
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 40, 40));
         setLocation(1000,150);
-       
+        
     }
 
     /**
