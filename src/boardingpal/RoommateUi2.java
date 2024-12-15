@@ -57,7 +57,6 @@ public class RoommateUi2 extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
         roundTextField1 = new boardingpal.RoundTextField();
-        fButton1 = new boardingPal.FButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -217,18 +216,7 @@ public class RoommateUi2 extends javax.swing.JFrame {
             }
         });
         jPanel2.add(roundTextField1);
-        roundTextField1.setBounds(0, 30, 970, 60);
-
-        fButton1.setForeground(new java.awt.Color(0, 0, 0));
-        fButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/filter.png"))); // NOI18N
-        fButton1.setText("Filter");
-        fButton1.setFillClick(new java.awt.Color(255, 255, 255));
-        fButton1.setFillOriginal(new java.awt.Color(255, 255, 255));
-        fButton1.setFillOver(new java.awt.Color(255, 255, 255));
-        fButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 16)); // NOI18N
-        fButton1.setIconTextGap(12);
-        jPanel2.add(fButton1);
-        fButton1.setBounds(1000, 30, 130, 60);
+        roundTextField1.setBounds(0, 30, 1130, 60);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 56)); // NOI18N
         jLabel1.setText("Find Board");
@@ -584,7 +572,6 @@ public class RoommateUi2 extends javax.swing.JFrame {
     private javax.swing.JLabel cardText1;
     private javax.swing.JLabel cardText2;
     private javax.swing.JLabel cardText3;
-    private boardingPal.FButton fButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

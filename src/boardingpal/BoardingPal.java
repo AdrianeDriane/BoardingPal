@@ -23,19 +23,6 @@ public class BoardingPal {
     
     public BoardingPal() {
         users.add(new User(
-            "test",
-            "test123",
-            "Adriane Dilao",
-            20,
-            LocalDate.of(2004, 10, 16),
-            "Male",
-            "Software Engineer",
-            "Filipino",
-            "Christianity",
-            "I love fried Chicken and lasagnas.",
-            "AdrianeDilao"
-        ));
-        users.add(new User(
             "john.doe@gmail.com", //email
             "password123", //password
             "John Doe", //fullName
