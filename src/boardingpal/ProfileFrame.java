@@ -4,9 +4,10 @@
  */
 package boardingpal;
 
-import java.awt.geom.RoundRectangle2D;
 import static boardingpal.BoardingPal.loggedInUser;
+import java.awt.geom.RoundRectangle2D;
 import boardingpal.Profiledrop;
+import boardingpal.models.Conversation;
 import boardingpal.models.User;
 import java.awt.Image;
 import javax.swing.BorderFactory;
@@ -21,6 +22,7 @@ public class ProfileFrame extends javax.swing.JFrame {
     
                     Profiledrop profileNav = new Profiledrop();
     public boolean isProfileNavDropped = false;
+    boolean doesUserHaveBedSpace = loggedInUser.getBedspace() != null;
     /**
      * Creates new form
      */
@@ -469,6 +471,7 @@ public class ProfileFrame extends javax.swing.JFrame {
                         .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
+        fButton1.setVisible(doesUserHaveBedSpace || isOwnedByUser);
         User temp = isOwnedByUser ? loggedInUser : user;
         String imageUrl = "/boardingpal/img/browseBoardmates/" + temp.getImageUrl() + "BoardMateFind.png";
         ImageIcon icon = new ImageIcon(getClass().getResource(imageUrl));
@@ -524,7 +527,30 @@ public class ProfileFrame extends javax.swing.JFrame {
             editProfileFrame.pack();
             this.dispose();
         } else {
-            
+            // Check if the conversation already exists
+            Conversation existingChat = BoardingPal.conversations.stream()
+                .filter(chat -> chat.getInquirer().equals(user) && chat.getBedspaceOwner().equals(loggedInUser))
+                .findFirst()
+                .orElse(null);
+
+            if (existingChat == null) {
+                String convoId = String.format("BS%03d", BoardingPal.conversations.size() + 1);
+                Conversation newConversation = new Conversation(
+                    user,
+                    loggedInUser,
+                    loggedInUser.getBedspace().getBedspaceName() + ": ",
+                    convoId
+                );
+
+                BoardingPal.conversations.add(newConversation);
+                loggedInUser.addConversation(convoId);
+                user.addConversation(convoId);
+            }
+
+            ChatFrame chatFrame = new ChatFrame(true);
+            chatFrame.setVisible(true);
+            chatFrame.setLocationRelativeTo(null);
+            chatFrame.pack();
         }
     }//GEN-LAST:event_fButton1MouseClicked
 
