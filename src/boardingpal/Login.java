@@ -54,7 +54,6 @@ public class Login extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         fButton3 = new boardingPal.FButton();
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         passField = new boardingpal.RoundTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -163,10 +162,6 @@ public class Login extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/boardingpal/img/icons/weui_eyes-off-outlined.png"))); // NOI18N
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(320, 16, 30, 30);
 
         passField.setBorder(javax.swing.BorderFactory.createEmptyBorder(15, 20, 15, 20));
         passField.setForeground(new java.awt.Color(153, 153, 153));
@@ -400,7 +395,6 @@ public class Login extends javax.swing.JFrame {
     private boardingPal.FButton fButton3;
     private javax.swing.JLabel forgotpass;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
