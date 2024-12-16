@@ -61,6 +61,13 @@ This app emphasizes boardmate-to-boardmate interaction rather than engaging with
 - **Stephanie Echavez**: UI/UX Designer
 - **Gil Tabañag**: Frontend Developer
 - **Dave Gulay**: Programmer
+- **Carl Binghay**: Programmer
+- **Cris Laluna**: Programmer
+- **Felix Ybanez**: Programmer
+- **Joemarie Tibur**: Programmer
+- **Kate Vequilla**: Programmer
+- **Lance Baclayon**: Programmer
+- **Philippo Racoma**: Programmer
 
 ---
 
