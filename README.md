@@ -40,8 +40,10 @@ This app emphasizes boardmate-to-boardmate interaction rather than engaging with
 **BoardMate Details**
    ![BoardMate Details](assets/images/boardmate_details.png)
 **Chat**
+
    ![Chat](assets/images/chat.png)
 **Requests**
+
    ![Requests](assets/images/requests.png)
 
 ---
