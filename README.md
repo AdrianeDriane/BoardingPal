@@ -9,8 +9,8 @@ BoardingPal addresses a common challenge for boarding students and workers: find
 
 According to a [study conducted by Central Philippine University, Iloilo City](https://repository.cpu.edu.ph/handle/20.500.12852/1551), there has been a 40% increase in boarding house licenses since the 1990s, highlighting the growing market for boarding accommodations. Unlike traditional apps focused on boarding house listings, BoardingPal bridges the gap between two perspectives:
 
-1️⃣ **Current tenants** of boarding house bedspaces looking for compatible roommates.
-2️⃣ **Individuals seeking** affordable bedspaces with existing roommates.
+1. **Current tenants** of boarding house bedspaces looking for compatible roommates.
+2. **Individuals seeking** affordable bedspaces with existing roommates.
 
 This app emphasizes boardmate-to-boardmate interaction rather than engaging with business owners. 🤝
 
