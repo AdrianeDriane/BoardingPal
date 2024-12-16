@@ -28,23 +28,21 @@ This app emphasizes boardmate-to-boardmate interaction rather than engaging with
 
 ### User Interface:
 **Home Page**
-   ![Home Page](assets/images/home_page.png)
+![Home Page](assets/images/home_page.png)
 **Login**
-   ![Login](assets/images/login.png)
+![Login](assets/images/login.png)
 **Browse Bedspace**
-   ![Browse Bedspace](assets/images/browse_bedspace.png)
+![Browse Bedspace](assets/images/browse_bedspace.png)
 **Bedspace Details**
-   ![Bedspace Details](assets/images/bedspace_details.png)
+![Bedspace Details](assets/images/bedspace_details.png)
 **Find BoardMate**
-   ![Find BoardMate](assets/images/find_boardmate.png)
+![Find BoardMate](assets/images/find_boardmate.png)
 **BoardMate Details**
-   ![BoardMate Details](assets/images/boardmate_details.png)
+![BoardMate Details](assets/images/boardmate_details.png)
 **Chat**
-
-   ![Chat](assets/images/chat.png)
+![Chat](assets/images/chat.png)
 **Requests**
-
-   ![Requests](assets/images/requests.png)
+![Requests](assets/images/requests.png)
 
 ---
 
